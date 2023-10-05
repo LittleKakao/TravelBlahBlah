@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		286B55C32ACEF584008EC81C /* testService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C22ACEF584008EC81C /* testService.swift */; };
+		286B55C52ACEF59A008EC81C /* testModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C42ACEF59A008EC81C /* testModel.swift */; };
+		286B55C72ACEF5AA008EC81C /* testViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C62ACEF5AA008EC81C /* testViewModel.swift */; };
+		286B55C92ACEF5C7008EC81C /* testCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C82ACEF5C7008EC81C /* testCommon.swift */; };
 		28FEB9E52AB698B5000F38B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FEB9E42AB698B5000F38B8 /* AppDelegate.swift */; };
 		28FEB9E72AB698B5000F38B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FEB9E62AB698B5000F38B8 /* SceneDelegate.swift */; };
 		28FEB9E92AB698B5000F38B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FEB9E82AB698B5000F38B8 /* ViewController.swift */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		286B55C22ACEF584008EC81C /* testService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testService.swift; sourceTree = "<group>"; };
+		286B55C42ACEF59A008EC81C /* testModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testModel.swift; sourceTree = "<group>"; };
+		286B55C62ACEF5AA008EC81C /* testViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewModel.swift; sourceTree = "<group>"; };
+		286B55C82ACEF5C7008EC81C /* testCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCommon.swift; sourceTree = "<group>"; };
 		28FEB9E12AB698B5000F38B8 /* TravelBlahBlah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBlahBlah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FEB9E42AB698B5000F38B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28FEB9E62AB698B5000F38B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +86,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		286B55BC2ACEF349008EC81C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				286B55C82ACEF5C7008EC81C /* testCommon.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		286B55BD2ACEF35B008EC81C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28FEB9E82AB698B5000F38B8 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		286B55BE2ACEF36C008EC81C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				28FEB9EA2AB698B5000F38B8 /* Main.storyboard */,
+				28FEB9F22AB698B6000F38B8 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		286B55BF2ACEF37F008EC81C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				286B55C62ACEF5AA008EC81C /* testViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		286B55C02ACEF391008EC81C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				286B55C42ACEF59A008EC81C /* testModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		286B55C12ACEF408008EC81C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				286B55C22ACEF584008EC81C /* testService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		28FEB9D82AB698B5000F38B8 = {
 			isa = PBXGroup;
 			children = (
@@ -101,12 +158,15 @@
 		28FEB9E32AB698B5000F38B8 /* TravelBlahBlah */ = {
 			isa = PBXGroup;
 			children = (
+				286B55C12ACEF408008EC81C /* Services */,
+				286B55C02ACEF391008EC81C /* Models */,
+				286B55BF2ACEF37F008EC81C /* ViewModels */,
+				286B55BE2ACEF36C008EC81C /* Views */,
+				286B55BD2ACEF35B008EC81C /* Controllers */,
+				286B55BC2ACEF349008EC81C /* Common */,
 				28FEB9E42AB698B5000F38B8 /* AppDelegate.swift */,
 				28FEB9E62AB698B5000F38B8 /* SceneDelegate.swift */,
-				28FEB9E82AB698B5000F38B8 /* ViewController.swift */,
-				28FEB9EA2AB698B5000F38B8 /* Main.storyboard */,
 				28FEB9F02AB698B6000F38B8 /* Assets.xcassets */,
-				28FEB9F22AB698B6000F38B8 /* LaunchScreen.storyboard */,
 				28FEB9F52AB698B6000F38B8 /* Info.plist */,
 				28FEB9ED2AB698B5000F38B8 /* TravelBlahBlah.xcdatamodeld */,
 			);
@@ -263,6 +323,10 @@
 			files = (
 				28FEB9E92AB698B5000F38B8 /* ViewController.swift in Sources */,
 				28FEB9E52AB698B5000F38B8 /* AppDelegate.swift in Sources */,
+				286B55C32ACEF584008EC81C /* testService.swift in Sources */,
+				286B55C72ACEF5AA008EC81C /* testViewModel.swift in Sources */,
+				286B55C92ACEF5C7008EC81C /* testCommon.swift in Sources */,
+				286B55C52ACEF59A008EC81C /* testModel.swift in Sources */,
 				28FEB9E72AB698B5000F38B8 /* SceneDelegate.swift in Sources */,
 				28FEB9EF2AB698B5000F38B8 /* TravelBlahBlah.xcdatamodeld in Sources */,
 			);
