@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TravelBlahBlah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainFirstVC" id="BYZ-38-t0r" customClass="MainController" customModule="TravelBlahBlah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="등록 하기"/>
+                                <connections>
+                                    <action selector="createButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NUS-K2-Fxu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -53,7 +56,7 @@
         <!--View Controller-->
         <scene sceneID="FzD-1E-fyI">
             <objects>
-                <viewController id="TYJ-Uu-IM6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainSecondVC" id="TYJ-Uu-IM6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hj3-R4-dCi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,6 +76,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hId-9e-O1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1025" y="-2"/>
+        </scene>
+        <!--createTravelVC-->
+        <scene sceneID="0sW-4A-MY7">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="createTravelVC" storyboardName="CreateTravel" referencedIdentifier="createTravelVC" id="YCT-eg-6PC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ua7-pG-1ue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-440" y="-96"/>
         </scene>
     </scenes>
     <resources>
