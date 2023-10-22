@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		286B55C32ACEF584008EC81C /* testService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C22ACEF584008EC81C /* testService.swift */; };
-		286B55C52ACEF59A008EC81C /* testModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C42ACEF59A008EC81C /* testModel.swift */; };
-		286B55C72ACEF5AA008EC81C /* testViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C62ACEF5AA008EC81C /* testViewModel.swift */; };
+		286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C42ACEF59A008EC81C /* JourneyModel.swift */; };
+		286B55C72ACEF5AA008EC81C /* JourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C62ACEF5AA008EC81C /* JourneyViewModel.swift */; };
 		286B55C92ACEF5C7008EC81C /* testCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C82ACEF5C7008EC81C /* testCommon.swift */; };
 		28D205142ADBC6FE00FCB971 /* CreateTravel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D205132ADBC6FE00FCB971 /* CreateTravel.storyboard */; };
 		28D205162ADBC78800FCB971 /* CreateTravelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D205152ADBC78800FCB971 /* CreateTravelController.swift */; };
@@ -44,8 +44,8 @@
 
 /* Begin PBXFileReference section */
 		286B55C22ACEF584008EC81C /* testService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testService.swift; sourceTree = "<group>"; };
-		286B55C42ACEF59A008EC81C /* testModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testModel.swift; sourceTree = "<group>"; };
-		286B55C62ACEF5AA008EC81C /* testViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewModel.swift; sourceTree = "<group>"; };
+		286B55C42ACEF59A008EC81C /* JourneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyModel.swift; sourceTree = "<group>"; };
+		286B55C62ACEF5AA008EC81C /* JourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyViewModel.swift; sourceTree = "<group>"; };
 		286B55C82ACEF5C7008EC81C /* testCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCommon.swift; sourceTree = "<group>"; };
 		28D205132ADBC6FE00FCB971 /* CreateTravel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTravel.storyboard; sourceTree = "<group>"; };
 		28D205152ADBC78800FCB971 /* CreateTravelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTravelController.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		286B55BF2ACEF37F008EC81C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				286B55C62ACEF5AA008EC81C /* testViewModel.swift */,
+				286B55C62ACEF5AA008EC81C /* JourneyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -128,7 +128,7 @@
 		286B55C02ACEF391008EC81C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				286B55C42ACEF59A008EC81C /* testModel.swift */,
+				286B55C42ACEF59A008EC81C /* JourneyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,9 +332,9 @@
 				28D205162ADBC78800FCB971 /* CreateTravelController.swift in Sources */,
 				28FEB9E52AB698B5000F38B8 /* AppDelegate.swift in Sources */,
 				286B55C32ACEF584008EC81C /* testService.swift in Sources */,
-				286B55C72ACEF5AA008EC81C /* testViewModel.swift in Sources */,
+				286B55C72ACEF5AA008EC81C /* JourneyViewModel.swift in Sources */,
 				286B55C92ACEF5C7008EC81C /* testCommon.swift in Sources */,
-				286B55C52ACEF59A008EC81C /* testModel.swift in Sources */,
+				286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */,
 				28FEB9E72AB698B5000F38B8 /* SceneDelegate.swift in Sources */,
 				28FEB9EF2AB698B5000F38B8 /* TravelBlahBlah.xcdatamodeld in Sources */,
 			);
