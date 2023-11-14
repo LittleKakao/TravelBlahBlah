@@ -9,6 +9,8 @@ import UIKit
 
 class MainController: UIViewController {
 
+    @IBOutlet weak var createButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,7 +20,6 @@ class MainController: UIViewController {
     
     // 초기 UI 세팅
     func configureUI() {
-        
     }
     
     // 등록하기 버튼이 눌렸을 때
