@@ -1,4 +1,4 @@
-package com.littlekakao.travelblahblah.ui.theme
+package com.littlekakao.travelblahblah.ui.components.theme
 
 import androidx.compose.ui.graphics.Color
 
