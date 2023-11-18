@@ -7,7 +7,9 @@
 
 import UIKit
 
-class CreateTravelController: UIViewController {
+class CreateTravelController: UIViewController, UITextViewDelegate {
+    
+    @IBOutlet weak var contryTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,11 @@ class CreateTravelController: UIViewController {
     
     // 초기 UI 세팅
     func configureUI() {
+        
+        contryTextField.keyboardType = UIKeyboardType.default
+        contryTextField.placeholder = "Where are you going?"
+        contryTextField.borderStyle = .roundedRect
+        contryTextField.clearButtonMode = .always
         
     }
 }
