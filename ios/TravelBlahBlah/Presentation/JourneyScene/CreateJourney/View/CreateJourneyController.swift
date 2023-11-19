@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateTravelController: UIViewController, UITextViewDelegate {
+class CreateJourneyController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var contryTextField: UITextField!
     

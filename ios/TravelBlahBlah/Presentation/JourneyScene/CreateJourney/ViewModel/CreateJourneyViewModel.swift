@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JourneyViewModel {
+class CreateJourneyViewModel {
     
     
 }

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create Travel Controller-->
+        <!--Create Journey Controller-->
         <scene sceneID="yUg-3S-c4r">
             <objects>
-                <viewController storyboardIdentifier="createTravelVC" id="3HK-sp-5v5" customClass="CreateTravelController" customModule="TravelBlahBlah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createJourneyVC" id="3HK-sp-5v5" customClass="CreateJourneyController" customModule="TravelBlahBlah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Bd-wr-LxM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
