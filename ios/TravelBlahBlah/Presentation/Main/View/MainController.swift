@@ -24,11 +24,11 @@ class MainController: UIViewController {
     
     // 등록하기 버튼이 눌렸을 때
     @IBAction func createButtonTapped(_ sender: UIButton) {
-        let createTravelVC = storyboard?.instantiateViewController(identifier: "createTravelVC") as! CreateTravelController
+        let createJourneyVC = storyboard?.instantiateViewController(identifier: "createJourneyVC") as! CreateJourneyController
         
-        createTravelVC.modalPresentationStyle = .fullScreen
+        createJourneyVC.modalPresentationStyle = .fullScreen
         
-        present(createTravelVC, animated: true, completion: nil)
+        present(createJourneyVC, animated: true, completion: nil)
     }
     
 }
