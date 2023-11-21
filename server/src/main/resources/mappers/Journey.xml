@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.littlekakao.travelblahblah.journey.mapper.JourneyMapper">
+
+    <select id="selectJourneyAll" resultType="Journey">
+        SELECT *
+        FROM journey
+    </select>
+
+    <select id="selectJourneyByJourneyId" resultType="Journey">
+        SELECT *
+        FROM journey
+        WHERE journey_id = #{journeyId}
+    </select>
+
+    <insert id="insertJourney" parameterType="Journey">
+        INSERT INTO journey (
+                             journey_nm,
+                             journey_dest,
+                             user_id,
+                             create_dt,
+                             update_dt,
+                             journey_start_dt,
+                             journey_end_dt,
+                             journey_del_yn
+        ) VALUE (
+                 #{journeyNm},
+                 #{journeyDest},
+                 #{userId},
+                 now(),
+                 now(),
+                 #{journeyStartDt},
+                 #{journeyEndDt},
+                false
+            )
+    </insert>
+
+    <update id="updateJourneyByJourneyId" parameterType="Journey">
+        UPDATE journey
+        SET journey_nm = #{journeyNm},
+            journey_dest = #{journeyDest},
+            update_dt = now(),
+            journey_start_dt = #{journeyStartDt},
+            journey_end_dt = #{journeyEndDt}
+        WHERE journey_id = #{journeyId}
+    </update>
+
+    <delete id="deleteJourneyByJourneyId" parameterType="int">
+        DELETE
+        FROM journey
+        WHERE journey_id = #{journeyId}
+    </delete>
+
+
+</mapper>
