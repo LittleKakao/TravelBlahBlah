@@ -4,24 +4,40 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material3.*
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.littlekakao.travelblahblah.R
 import com.littlekakao.travelblahblah.ui.components.composable.BottomNavigation
 import com.littlekakao.travelblahblah.ui.components.theme.TravelblahblahTheme
 
+object CalendarMenu : BottomNavigation(
+    R.string.text_calendar,
+    R.drawable.ic_round_calendar_month,
+    CALENDAR
+)
+object ListMenu : BottomNavigation(
+    R.string.text_list,
+    R.drawable.ic_round_list,
+    LIST
+)
 
 class JourneyActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,9 +70,9 @@ fun JourneyScreenView() {
 
 @Composable
 fun JourneyBottomNavigation(navController: NavHostController) {
-    val items = listOf<BottomNavigation>(
-        JourneyViewModel.ListMenu,
-        JourneyViewModel.CalendarMenu,
+    val items = listOf(
+        CalendarMenu,
+        ListMenu
     )
 
     NavigationBar(
@@ -67,7 +83,7 @@ fun JourneyBottomNavigation(navController: NavHostController) {
         val currentRoute = navBackStackEntry?.destination?.route
 
         items.forEach { item ->
-            BottomNavigationItem(
+            NavigationBarItem(
                 icon = {
                     Icon(
                         painter = painterResource(id = item.icon),
@@ -78,10 +94,8 @@ fun JourneyBottomNavigation(navController: NavHostController) {
                     )
                 },
                 label = { Text(stringResource(id = item.title), fontSize = 9.sp) },
-                selectedContentColor = MaterialTheme.colorScheme.primary,
-                unselectedContentColor = Color.Gray,
                 selected = currentRoute == item.screenRoute,
-                alwaysShowLabel = false,
+                alwaysShowLabel = true,
                 onClick = {
                     navController.navigate(item.screenRoute) {
                         navController.graph.startDestinationRoute?.let {
@@ -98,12 +112,12 @@ fun JourneyBottomNavigation(navController: NavHostController) {
 
 @Composable
 fun JourneyNavigationGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = JourneyViewModel.ListMenu.screenRoute) {
-        composable(JourneyViewModel.CalendarMenu.screenRoute) {
-            JourneyCalendarFragment()
-        }
-        composable(JourneyViewModel.ListMenu.screenRoute) {
+    NavHost(navController = navController, startDestination = LIST) {
+        composable(LIST) {
             JourneyListFragment()
+        }
+        composable(CALENDAR) {
+            JourneyCalendarFragment()
         }
     }
 }
