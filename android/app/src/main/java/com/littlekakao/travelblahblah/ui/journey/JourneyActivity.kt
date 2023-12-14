@@ -13,6 +13,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -25,6 +26,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.littlekakao.travelblahblah.R
+import com.littlekakao.travelblahblah.ui.components.composable.AppElevatedButton
 import com.littlekakao.travelblahblah.ui.components.composable.BottomNavigation
 import com.littlekakao.travelblahblah.ui.components.theme.TravelblahblahTheme
 
@@ -44,7 +46,6 @@ class JourneyActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TravelblahblahTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -62,7 +63,15 @@ fun JourneyScreenView() {
     Scaffold(
         bottomBar = { JourneyBottomNavigation(navController = navController)}
     ) {
-        Box(Modifier.padding(it)){
+        Box(
+            modifier = Modifier.padding(it).fillMaxSize(),
+            contentAlignment = Alignment.Center){
+
+            AppElevatedButton(
+                label = stringResource(R.string.add_journey),
+                onClick = {} // TODO: 여행 등록 화면 이동
+            )
+
             JourneyNavigationGraph(navController = navController)
         }
     }
@@ -114,10 +123,10 @@ fun JourneyBottomNavigation(navController: NavHostController) {
 fun JourneyNavigationGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = LIST) {
         composable(LIST) {
-            JourneyListFragment()
+            // TODO: LIST Compose 실행
         }
         composable(CALENDAR) {
-            JourneyCalendarFragment()
+            // TODO: CALENDAR Compose 실행
         }
     }
 }
