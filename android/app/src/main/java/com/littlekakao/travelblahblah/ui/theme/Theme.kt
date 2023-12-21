@@ -1,4 +1,4 @@
-package com.littlekakao.travelblahblah.ui.components.theme
+package com.littlekakao.travelblahblah.ui.theme
 
 import android.app.Activity
 import android.os.Build
