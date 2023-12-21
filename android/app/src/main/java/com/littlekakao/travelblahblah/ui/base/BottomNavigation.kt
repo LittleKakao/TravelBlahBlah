@@ -1,4 +1,4 @@
-package com.littlekakao.travelblahblah.ui.components.composable
+package com.littlekakao.travelblahblah.ui.base
 
 
 abstract class BottomNavigation (
