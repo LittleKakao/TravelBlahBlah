@@ -1,6 +1,5 @@
 package com.littlekakao.travelblahblah.ui.journey
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -41,7 +40,7 @@ object ListMenu : BottomNavigation(
 
 
 @Composable
-fun JourneyScreen() {
+fun JourneyView() {
     val navController = rememberNavController()
     Scaffold(
         bottomBar = { JourneyBottomNavigation(navController = navController)}
@@ -50,7 +49,7 @@ fun JourneyScreen() {
             modifier = Modifier
                 .padding(it)
                 .fillMaxSize(),
-            )
+        )
         {
             JourneyNavHost(navController = navController)
         }
@@ -149,6 +148,6 @@ fun JourneyNavHost(navController: NavHostController) {
 @Composable
 fun JourneyPreview() {
     TravelblahblahTheme {
-        JourneyScreen()
+        JourneyView()
     }
 }

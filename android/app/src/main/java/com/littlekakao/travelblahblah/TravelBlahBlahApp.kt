@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.littlekakao.travelblahblah.ui.theme.TravelblahblahTheme
-import com.littlekakao.travelblahblah.ui.journey.JourneyScreen
+import com.littlekakao.travelblahblah.ui.journey.JourneyView
 
 class TravelBlahBlah : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class TravelBlahBlah : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    JourneyScreen()
+                    JourneyView()
                 }
             }
         }
