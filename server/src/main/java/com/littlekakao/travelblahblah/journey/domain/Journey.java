@@ -1,17 +1,24 @@
 package com.littlekakao.travelblahblah.journey.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 
 public class Journey {
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int journeyId;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int userId;
     private String journeyName;
     private String journeyDestination;
     private Date journeyStartDate;
     private Date journeyEndDate;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Date journeyCreateDate;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Date journeyUpdateDate;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String journeyDeleteYn;
 
     public int getJourneyId() {
