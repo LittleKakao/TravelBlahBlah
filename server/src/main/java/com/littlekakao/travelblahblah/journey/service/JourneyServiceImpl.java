@@ -2,10 +2,10 @@ package com.littlekakao.travelblahblah.journey.service;
 
 import com.littlekakao.travelblahblah.journey.domain.Journey;
 import com.littlekakao.travelblahblah.journey.mapper.JourneyMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class JourneyServiceImpl implements JourneyService{
@@ -34,8 +34,8 @@ public class JourneyServiceImpl implements JourneyService{
     }
 
     @Override
-    public int modifyJourneyByJourneyId(int journeyId, Journey journey) {
-        return journeyMapper.updateJourneyByJourneyId(journeyId, journey);
+    public int modifyJourneyByJourneyId(Map<String, Object> paramMap) {
+        return journeyMapper.updateJourneyByJourneyId(paramMap);
     }
 
     @Override

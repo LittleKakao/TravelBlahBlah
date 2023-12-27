@@ -17,33 +17,33 @@
 
     <insert id="insertJourney" parameterType="Journey">
         INSERT INTO journey (
-                             journey_nm,
-                             journey_dest,
                              user_id,
-                             create_dt,
-                             update_dt,
-                             journey_start_dt,
-                             journey_end_dt,
-                             journey_del_yn
+                             journey_name,
+                             journey_destination,
+                             journey_start_date,
+                             journey_end_date,
+                             journey_create_date,
+                             journey_update_date,
+                             journey_delete_yn
         ) VALUE (
-                 #{journeyNm},
-                 #{journeyDest},
-                 #{userId},
-                 now(),
-                 now(),
-                 #{journeyStartDt},
-                 #{journeyEndDt},
-                false
+            #{userId},
+            #{journeyName},
+            #{journeyDestination},
+            #{journeyStartDate},
+            #{journeyEndDate},
+            now(),
+            now(),
+            'N'
             )
     </insert>
 
-    <update id="updateJourneyByJourneyId" parameterType="Journey">
+    <update id="updateJourneyByJourneyId" parameterType="map">
         UPDATE journey
-        SET journey_nm = #{journeyNm},
-            journey_dest = #{journeyDest},
-            update_dt = now(),
-            journey_start_dt = #{journeyStartDt},
-            journey_end_dt = #{journeyEndDt}
+        SET journey_name = #{journey.journeyName},
+            journey_destination = #{journey.journeyDestination},
+            journey_start_date = #{journey.journeyStartDate},
+            journey_end_date = #{journey.journeyEndDate},
+            journey_update_date = now()
         WHERE journey_id = #{journeyId}
     </update>
 
