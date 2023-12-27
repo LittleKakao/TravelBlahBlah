@@ -1,15 +1,10 @@
 package com.littlekakao.travelblahblah.ui.journey
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -26,53 +21,37 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.littlekakao.travelblahblah.R
-import com.littlekakao.travelblahblah.ui.components.composable.AppElevatedButton
-import com.littlekakao.travelblahblah.ui.components.composable.BottomNavigation
-import com.littlekakao.travelblahblah.ui.components.theme.TravelblahblahTheme
+import com.littlekakao.travelblahblah.ui.base.AppElevatedButton
+import com.littlekakao.travelblahblah.ui.base.AppFloatingActionButton
+import com.littlekakao.travelblahblah.ui.base.BottomNavigation
+import com.littlekakao.travelblahblah.ui.theme.TravelblahblahTheme
 
 object CalendarMenu : BottomNavigation(
     R.string.text_calendar,
     R.drawable.ic_round_calendar_month,
-    CALENDAR
+    "CALENDAR"
 )
+
 object ListMenu : BottomNavigation(
     R.string.text_list,
     R.drawable.ic_round_list,
-    LIST
+    "LIST"
 )
 
-class JourneyActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            TravelblahblahTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    JourneyScreenView()
-                }
-            }
-        }
-    }
-}
 
 @Composable
-fun JourneyScreenView() {
+fun JourneyView() {
     val navController = rememberNavController()
     Scaffold(
         bottomBar = { JourneyBottomNavigation(navController = navController)}
     ) {
         Box(
-            modifier = Modifier.padding(it).fillMaxSize(),
-            contentAlignment = Alignment.Center){
-
-            AppElevatedButton(
-                label = stringResource(R.string.add_journey),
-                onClick = {} // TODO: 여행 등록 화면 이동
-            )
-
-            JourneyNavigationGraph(navController = navController)
+            modifier = Modifier
+                .padding(it)
+                .fillMaxSize(),
+        )
+        {
+            JourneyNavHost(navController = navController)
         }
     }
 }
@@ -80,8 +59,8 @@ fun JourneyScreenView() {
 @Composable
 fun JourneyBottomNavigation(navController: NavHostController) {
     val items = listOf(
-        CalendarMenu,
-        ListMenu
+        ListMenu,
+        CalendarMenu
     )
 
     NavigationBar(
@@ -120,14 +99,47 @@ fun JourneyBottomNavigation(navController: NavHostController) {
 }
 
 @Composable
-fun JourneyNavigationGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = LIST) {
-        composable(LIST) {
-            // TODO: LIST Compose 실행
-        }
-        composable(CALENDAR) {
-            // TODO: CALENDAR Compose 실행
-        }
+fun JourneyList() {
+    // TODO: 리스트가 존재하는 경우와 아닌 경우 나눠서 표시
+    Box(
+        modifier = Modifier
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center)
+    {
+        AppElevatedButton(
+            label = stringResource(R.string.add_journey),
+            onClick = {} // TODO: 여행 등록 화면 이동
+        )
+    }
+
+}
+
+
+@Composable
+fun JourneyCalendar() {
+    Box(
+        modifier = Modifier
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center)
+    {
+        Spacer(Modifier.matchParentSize())
+        AppFloatingActionButton(
+            onClick = { /*TODO*/ },
+            icon = painterResource(R.drawable.ic_round_add),
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .padding(16.dp)
+        )
+        Text("Temp")
+    }
+}
+
+
+@Composable
+fun JourneyNavHost(navController: NavHostController) {
+    NavHost(navController = navController, startDestination = ListMenu.screenRoute) {
+        composable(ListMenu.screenRoute) {JourneyList()}
+        composable(CalendarMenu.screenRoute) { JourneyCalendar()}
     }
 }
 
@@ -136,6 +148,6 @@ fun JourneyNavigationGraph(navController: NavHostController) {
 @Composable
 fun JourneyPreview() {
     TravelblahblahTheme {
-        JourneyScreenView()
+        JourneyView()
     }
 }
