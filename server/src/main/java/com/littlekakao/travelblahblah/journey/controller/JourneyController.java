@@ -6,7 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/journey")
@@ -30,7 +32,7 @@ public class JourneyController {
         if (journey != null) {
             return new ResponseEntity<>(journey, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -46,7 +48,10 @@ public class JourneyController {
 
     @PutMapping("/{journeyId}")
     public ResponseEntity<Void> modifyJourneyByJourneyId(@PathVariable int journeyId, @RequestBody Journey journey) throws Exception {
-        int isJourneyModified = journeyService.modifyJourneyByJourneyId(journeyId, journey);
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("journeyId", journeyId);
+        paramMap.put("journey", journey);
+        int isJourneyModified = journeyService.modifyJourneyByJourneyId(paramMap);
         if (isJourneyModified == 1) {
             return new ResponseEntity<>(HttpStatus.OK);
         } else {

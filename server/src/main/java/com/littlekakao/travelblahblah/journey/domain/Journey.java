@@ -3,15 +3,16 @@ package com.littlekakao.travelblahblah.journey.domain;
 import java.util.Date;
 
 public class Journey {
+
     private int journeyId;
-    private String journeyNm;
-    private String journeyDest;
     private int userId;
-    private Date createDt;
-    private Date updateDt;
-    private Date journeyStartDt;
-    private Date journeyEndDt;
-    private boolean journeyDelYn;
+    private String journeyName;
+    private String journeyDestination;
+    private Date journeyStartDate;
+    private Date journeyEndDate;
+    private Date journeyCreateDate;
+    private Date journeyUpdateDate;
+    private String journeyDeleteYn;
 
     public int getJourneyId() {
         return journeyId;
@@ -19,22 +20,6 @@ public class Journey {
 
     public void setJourneyId(int journeyId) {
         this.journeyId = journeyId;
-    }
-
-    public String getJourneyNm() {
-        return journeyNm;
-    }
-
-    public void setJourneyNm(String journeyNm) {
-        this.journeyNm = journeyNm;
-    }
-
-    public String getJourneyDest() {
-        return journeyDest;
-    }
-
-    public void setJourneyDest(String journeyDest) {
-        this.journeyDest = journeyDest;
     }
 
     public int getUserId() {
@@ -45,43 +30,60 @@ public class Journey {
         this.userId = userId;
     }
 
-    public Date getCreateDt() {
-        return createDt;
+    public String getJourneyName() {
+        return journeyName;
     }
 
-    public void setCreateDt(Date createDt) {
-        this.createDt = createDt;
+    public void setJourneyName(String journeyName) {
+        this.journeyName = journeyName;
     }
 
-    public Date getUpdateDt() {
-        return updateDt;
+    public String getJourneyDestination() {
+        return journeyDestination;
     }
 
-    public void setUpdateDt(Date updateDt) {
-        this.updateDt = updateDt;
+    public void setJourneyDestination(String journeyDestination) {
+        this.journeyDestination = journeyDestination;
     }
 
-    public Date getJourneyStartDt() {
-        return journeyStartDt;
+    public Date getJourneyStartDate() {
+        return journeyStartDate;
     }
 
-    public void setJourneyStartDt(Date journeyStartDt) {
-        this.journeyStartDt = journeyStartDt;
+    public void setJourneyStartDate(Date journeyStartDate) {
+        this.journeyStartDate = journeyStartDate;
     }
 
-    public Date getJourneyEndDt() {
-        return journeyEndDt;
+    public Date getJourneyEndDate() {
+        return journeyEndDate;
     }
 
-    public void setJourneyEndDt(Date journeyEndDt) {
-        this.journeyEndDt = journeyEndDt;
+    public void setJourneyEndDate(Date journeyEndDate) {
+        this.journeyEndDate = journeyEndDate;
     }
 
-    public boolean isJourneyDelYn() {
-        return journeyDelYn;
+    public Date getJourneyCreateDate() {
+        return journeyCreateDate;
     }
 
-    public void setJourneyDelYn(boolean journeyDelYn) {
-        this.journeyDelYn = journeyDelYn;
+    public void setJourneyCreateDate(Date journeyCreateDate) {
+        this.journeyCreateDate = journeyCreateDate;
+    }
+
+    public Date getJourneyUpdateDate() {
+        return journeyUpdateDate;
+    }
+
+    public void setJourneyUpdateDate(Date journeyUpdateDate) {
+        this.journeyUpdateDate = journeyUpdateDate;
+    }
+
+    public String getJourneyDeleteYn() {
+        return journeyDeleteYn;
+    }
+
+    public void setJourneyDeleteYn(String journeyDeleteYn) {
+        this.journeyDeleteYn = journeyDeleteYn;
     }
 }
+
