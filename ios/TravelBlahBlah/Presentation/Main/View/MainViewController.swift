@@ -7,9 +7,22 @@
 
 import UIKit
 
-class MainController: UIViewController {
+class MainViewController: UIViewController, StoryboardInstantiable {
 
     @IBOutlet weak var createButton: UIButton!
+    
+    private var viewModel: MainViewModel!
+    
+    // MARK: - Lifecycle
+    
+    static func create(
+        with viewModel: MainViewModel
+    ) -> MainViewController {
+        let view = MainViewController.instantiateViewController()
+        view.viewModel = viewModel
+        
+        return view
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +37,7 @@ class MainController: UIViewController {
     
     // 등록하기 버튼이 눌렸을 때
     @IBAction func createButtonTapped(_ sender: UIButton) {
-        let createJourneyVC = storyboard?.instantiateViewController(identifier: "createJourneyVC") as! CreateJourneyController
-        
-        createJourneyVC.modalPresentationStyle = .fullScreen
-        
-        present(createJourneyVC, animated: true, completion: nil)
+        viewModel.didTappedButton()
     }
     
 }
