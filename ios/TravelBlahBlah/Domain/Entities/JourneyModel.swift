@@ -5,7 +5,7 @@
 //  Created by BBangGiJin on 2023/10/05.
 //
 
-import UIKit
+import Foundation
 
 struct Journey: Codable {
     

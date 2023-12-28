@@ -21,6 +21,7 @@
 		2801C6102B09922700EA886C /* TestStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801C60F2B09922700EA886C /* TestStubs.swift */; };
 		286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C42ACEF59A008EC81C /* JourneyModel.swift */; };
 		286B55C72ACEF5AA008EC81C /* CreateJourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */; };
+		28CB132C2B3DB74000C97BBB /* JourneyQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB132B2B3DB74000C97BBB /* JourneyQuery.swift */; };
 		28D205142ADBC6FE00FCB971 /* CreateJourney.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D205132ADBC6FE00FCB971 /* CreateJourney.storyboard */; };
 		28D205162ADBC78800FCB971 /* CreateJourneyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D205152ADBC78800FCB971 /* CreateJourneyController.swift */; };
 		28FEB9E52AB698B5000F38B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FEB9E42AB698B5000F38B8 /* AppDelegate.swift */; };
@@ -67,6 +68,7 @@
 		2801C60F2B09922700EA886C /* TestStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStubs.swift; sourceTree = "<group>"; };
 		286B55C42ACEF59A008EC81C /* JourneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyModel.swift; sourceTree = "<group>"; };
 		286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyViewModel.swift; sourceTree = "<group>"; };
+		28CB132B2B3DB74000C97BBB /* JourneyQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyQuery.swift; sourceTree = "<group>"; };
 		28D205132ADBC6FE00FCB971 /* CreateJourney.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateJourney.storyboard; sourceTree = "<group>"; };
 		28D205152ADBC78800FCB971 /* CreateJourneyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyController.swift; sourceTree = "<group>"; };
 		28FEB9E12AB698B5000F38B8 /* TravelBlahBlah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBlahBlah.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				286B55C42ACEF59A008EC81C /* JourneyModel.swift */,
+				28CB132B2B3DB74000C97BBB /* JourneyQuery.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */,
 				2801C5FD2B098E8800EA886C /* JourneyRequestDTO.swift in Sources */,
 				2801C6052B098F8600EA886C /* NetworkConfig.swift in Sources */,
+				28CB132C2B3DB74000C97BBB /* JourneyQuery.swift in Sources */,
 				2801C5FF2B098EA000EA886C /* JourneyResponseDTO.swift in Sources */,
 				28FEB9E72AB698B5000F38B8 /* SceneDelegate.swift in Sources */,
 				28FEB9EF2AB698B5000F38B8 /* TravelBlahBlah.xcdatamodeld in Sources */,
