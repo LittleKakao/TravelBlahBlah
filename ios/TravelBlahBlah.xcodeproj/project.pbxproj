@@ -22,6 +22,7 @@
 		286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C42ACEF59A008EC81C /* JourneyModel.swift */; };
 		286B55C72ACEF5AA008EC81C /* CreateJourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */; };
 		28CB132C2B3DB74000C97BBB /* JourneyQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB132B2B3DB74000C97BBB /* JourneyQuery.swift */; };
+		28CB132F2B3DB85B00C97BBB /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB132E2B3DB85B00C97BBB /* UseCase.swift */; };
 		28D205142ADBC6FE00FCB971 /* CreateJourney.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D205132ADBC6FE00FCB971 /* CreateJourney.storyboard */; };
 		28D205162ADBC78800FCB971 /* CreateJourneyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D205152ADBC78800FCB971 /* CreateJourneyController.swift */; };
 		28FEB9E52AB698B5000F38B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FEB9E42AB698B5000F38B8 /* AppDelegate.swift */; };
@@ -69,6 +70,7 @@
 		286B55C42ACEF59A008EC81C /* JourneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyModel.swift; sourceTree = "<group>"; };
 		286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyViewModel.swift; sourceTree = "<group>"; };
 		28CB132B2B3DB74000C97BBB /* JourneyQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyQuery.swift; sourceTree = "<group>"; };
+		28CB132E2B3DB85B00C97BBB /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		28D205132ADBC6FE00FCB971 /* CreateJourney.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateJourney.storyboard; sourceTree = "<group>"; };
 		28D205152ADBC78800FCB971 /* CreateJourneyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyController.swift; sourceTree = "<group>"; };
 		28FEB9E12AB698B5000F38B8 /* TravelBlahBlah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBlahBlah.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +248,7 @@
 		2801C5EC2B0984F600EA886C /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				28CB132D2B3DB80900C97BBB /* Protocol */,
 				2801C6022B098F4D00EA886C /* TestUseCase.swift */,
 			);
 			path = UseCases;
@@ -350,6 +353,14 @@
 				2801C60D2B0990A700EA886C /* MainViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		28CB132D2B3DB80900C97BBB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				28CB132E2B3DB85B00C97BBB /* UseCase.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		28FEB9D82AB698B5000F38B8 = {
@@ -555,6 +566,7 @@
 				28CB132C2B3DB74000C97BBB /* JourneyQuery.swift in Sources */,
 				2801C5FF2B098EA000EA886C /* JourneyResponseDTO.swift in Sources */,
 				28FEB9E72AB698B5000F38B8 /* SceneDelegate.swift in Sources */,
+				28CB132F2B3DB85B00C97BBB /* UseCase.swift in Sources */,
 				28FEB9EF2AB698B5000F38B8 /* TravelBlahBlah.xcdatamodeld in Sources */,
 				2801C60E2B0990A700EA886C /* MainViewModel.swift in Sources */,
 			);
