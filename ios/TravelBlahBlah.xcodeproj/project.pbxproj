@@ -21,6 +21,9 @@
 		286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C42ACEF59A008EC81C /* JourneyModel.swift */; };
 		286B55C72ACEF5AA008EC81C /* CreateJourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */; };
 		28A638A52B41A5CD0006C620 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A638A42B41A5CD0006C620 /* AppConfigurations.swift */; };
+		28A638A72B41A9E10006C620 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A638A62B41A9E10006C620 /* DataTransferService.swift */; };
+		28A638A92B41AB030006C620 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A638A82B41AB030006C620 /* NetworkService.swift */; };
+		28A638AB2B41AD930006C620 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A638AA2B41AD930006C620 /* Endpoint.swift */; };
 		28D205142ADBC6FE00FCB971 /* CreateJourneyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D205132ADBC6FE00FCB971 /* CreateJourneyViewController.storyboard */; };
 		28D205162ADBC78800FCB971 /* CreateJourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D205152ADBC78800FCB971 /* CreateJourneyViewController.swift */; };
 		28D90CB62B16224100D2851B /* JourneySceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D90CB52B16224100D2851B /* JourneySceneDIContainer.swift */; };
@@ -75,6 +78,9 @@
 		286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyViewModel.swift; sourceTree = "<group>"; };
 		28A638A32B41A4BB0006C620 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		28A638A42B41A5CD0006C620 /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
+		28A638A62B41A9E10006C620 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		28A638A82B41AB030006C620 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		28A638AA2B41AD930006C620 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		28D205132ADBC6FE00FCB971 /* CreateJourneyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateJourneyViewController.storyboard; sourceTree = "<group>"; };
 		28D205152ADBC78800FCB971 /* CreateJourneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyViewController.swift; sourceTree = "<group>"; };
 		28D90CB52B16224100D2851B /* JourneySceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneySceneDIContainer.swift; sourceTree = "<group>"; };
@@ -271,7 +277,10 @@
 		2801C5ED2B09850300EA886C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				28A638A62B41A9E10006C620 /* DataTransferService.swift */,
+				28A638AA2B41AD930006C620 /* Endpoint.swift */,
 				2801C6042B098F8600EA886C /* NetworkConfig.swift */,
+				28A638A82B41AB030006C620 /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -582,14 +591,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2801C5F82B098B8700EA886C /* ConnectionError.swift in Sources */,
+				28A638AB2B41AD930006C620 /* Endpoint.swift in Sources */,
 				2801C5F52B098A1F00EA886C /* AppDIContainer.swift in Sources */,
 				28486DCA2B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift in Sources */,
 				28E83DB92B1334E800D6D175 /* StoryboardInstantiable.swift in Sources */,
 				2801C5FA2B098DDA00EA886C /* DefaultJourneyRepository.swift in Sources */,
 				28FB02022B3EFD8F0059349C /* UseCase.swift in Sources */,
+				28A638A92B41AB030006C620 /* NetworkService.swift in Sources */,
 				2801C6012B098F0E00EA886C /* JourneyRepository.swift in Sources */,
 				28FEB9E92AB698B5000F38B8 /* MainViewController.swift in Sources */,
 				28D205162ADBC78800FCB971 /* CreateJourneyViewController.swift in Sources */,
+				28A638A72B41A9E10006C620 /* DataTransferService.swift in Sources */,
 				28FEB9E52AB698B5000F38B8 /* AppDelegate.swift in Sources */,
 				2801C6072B098FDE00EA886C /* TestMocks.swift in Sources */,
 				2801C6102B09922700EA886C /* TestStubs.swift in Sources */,
