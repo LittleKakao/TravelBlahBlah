@@ -20,6 +20,7 @@
 		28486DCA2B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28486DC92B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift */; };
 		286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C42ACEF59A008EC81C /* JourneyModel.swift */; };
 		286B55C72ACEF5AA008EC81C /* CreateJourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */; };
+		28A638A52B41A5CD0006C620 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A638A42B41A5CD0006C620 /* AppConfigurations.swift */; };
 		28D205142ADBC6FE00FCB971 /* CreateJourneyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D205132ADBC6FE00FCB971 /* CreateJourneyViewController.storyboard */; };
 		28D205162ADBC78800FCB971 /* CreateJourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D205152ADBC78800FCB971 /* CreateJourneyViewController.swift */; };
 		28D90CB62B16224100D2851B /* JourneySceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D90CB52B16224100D2851B /* JourneySceneDIContainer.swift */; };
@@ -72,6 +73,8 @@
 		28486DC92B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneySceneFlowCoordinator.swift; sourceTree = "<group>"; };
 		286B55C42ACEF59A008EC81C /* JourneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyModel.swift; sourceTree = "<group>"; };
 		286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyViewModel.swift; sourceTree = "<group>"; };
+		28A638A32B41A4BB0006C620 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		28A638A42B41A5CD0006C620 /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
 		28D205132ADBC6FE00FCB971 /* CreateJourneyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateJourneyViewController.storyboard; sourceTree = "<group>"; };
 		28D205152ADBC78800FCB971 /* CreateJourneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyViewController.swift; sourceTree = "<group>"; };
 		28D90CB52B16224100D2851B /* JourneySceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneySceneDIContainer.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 				28FEB9E42AB698B5000F38B8 /* AppDelegate.swift */,
 				28FEB9E62AB698B5000F38B8 /* SceneDelegate.swift */,
 				28D90CB72B1625C800D2851B /* AppFlowCoordinator.swift */,
+				28A638A42B41A5CD0006C620 /* AppConfigurations.swift */,
 				2801C5E52B09844400EA886C /* DIContainer */,
 			);
 			path = Application;
@@ -394,6 +398,7 @@
 		28FEB9D82AB698B5000F38B8 = {
 			isa = PBXGroup;
 			children = (
+				28A638A32B41A4BB0006C620 /* Secrets.xcconfig */,
 				28FEB9E32AB698B5000F38B8 /* TravelBlahBlah */,
 				28FEB9FD2AB698B6000F38B8 /* TravelBlahBlahTests */,
 				28FEBA072AB698B6000F38B8 /* TravelBlahBlahUITests */,
@@ -588,6 +593,7 @@
 				28FEB9E52AB698B5000F38B8 /* AppDelegate.swift in Sources */,
 				2801C6072B098FDE00EA886C /* TestMocks.swift in Sources */,
 				2801C6102B09922700EA886C /* TestStubs.swift in Sources */,
+				28A638A52B41A5CD0006C620 /* AppConfigurations.swift in Sources */,
 				28D90CB82B1625C800D2851B /* AppFlowCoordinator.swift in Sources */,
 				286B55C72ACEF5AA008EC81C /* CreateJourneyViewModel.swift in Sources */,
 				286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */,
@@ -772,6 +778,7 @@
 		};
 		28FEBA0F2AB698B6000F38B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A638A32B41A4BB0006C620 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -802,6 +809,7 @@
 		};
 		28FEBA102AB698B6000F38B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A638A32B41A4BB0006C620 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -832,6 +840,7 @@
 		};
 		28FEBA122AB698B6000F38B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A638A32B41A4BB0006C620 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
