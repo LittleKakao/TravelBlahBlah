@@ -10,3 +10,7 @@ import Foundation
 struct JourneyResponseDTO: Decodable {
     
 }
+
+struct EmptyResponseDTO: Decodable {
+    // No resource, just a success flag
+}
