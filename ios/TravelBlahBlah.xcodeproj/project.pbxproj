@@ -18,6 +18,7 @@
 		2801C60E2B0990A700EA886C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801C60D2B0990A700EA886C /* MainViewModel.swift */; };
 		2801C6102B09922700EA886C /* TestStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801C60F2B09922700EA886C /* TestStubs.swift */; };
 		28486DCA2B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28486DC92B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift */; };
+		286450492B46E140000B9983 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286450482B46E140000B9983 /* RepositoryTask.swift */; };
 		286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C42ACEF59A008EC81C /* JourneyModel.swift */; };
 		286B55C72ACEF5AA008EC81C /* CreateJourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */; };
 		28A638A52B41A5CD0006C620 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A638A42B41A5CD0006C620 /* AppConfigurations.swift */; };
@@ -74,6 +75,7 @@
 		2801C60D2B0990A700EA886C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		2801C60F2B09922700EA886C /* TestStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStubs.swift; sourceTree = "<group>"; };
 		28486DC92B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneySceneFlowCoordinator.swift; sourceTree = "<group>"; };
+		286450482B46E140000B9983 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
 		286B55C42ACEF59A008EC81C /* JourneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyModel.swift; sourceTree = "<group>"; };
 		286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyViewModel.swift; sourceTree = "<group>"; };
 		28A638A32B41A4BB0006C620 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		2801C5E82B09847300EA886C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				286450472B46E129000B9983 /* Utils */,
 				2801C5F92B098DDA00EA886C /* DefaultJourneyRepository.swift */,
 			);
 			path = Repositories;
@@ -386,6 +389,14 @@
 				28486DC92B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift */,
 			);
 			path = Flows;
+			sourceTree = "<group>";
+		};
+		286450472B46E129000B9983 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				286450482B46E140000B9983 /* RepositoryTask.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		28E83DB72B1334C500D6D175 /* Protocols */ = {
@@ -616,6 +627,7 @@
 				28FEB9E72AB698B5000F38B8 /* SceneDelegate.swift in Sources */,
 				28FEB9EF2AB698B5000F38B8 /* TravelBlahBlah.xcdatamodeld in Sources */,
 				28FB01FA2B3EFB7E0059349C /* CreateJourneyUseCase.swift in Sources */,
+				286450492B46E140000B9983 /* RepositoryTask.swift in Sources */,
 				28FB01FD2B3EFC520059349C /* Cancellable.swift in Sources */,
 				2801C60E2B0990A700EA886C /* MainViewModel.swift in Sources */,
 				28FB01FF2B3EFD3D0059349C /* JourneyQuery.swift in Sources */,
