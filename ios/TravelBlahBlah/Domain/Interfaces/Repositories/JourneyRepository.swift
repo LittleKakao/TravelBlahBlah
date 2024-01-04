@@ -8,5 +8,10 @@
 import Foundation
 
 protocol JourneyRepository {
-    
+    @discardableResult
+    func fetchMoviesList(
+        query: JourneyQuery,
+        cached: @escaping () -> Void,
+        completion: @escaping (Result<Void, Error>) -> Void
+    ) -> Cancellable?
 }
