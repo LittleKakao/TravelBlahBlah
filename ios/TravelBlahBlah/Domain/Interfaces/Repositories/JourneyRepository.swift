@@ -9,7 +9,7 @@ import Foundation
 
 protocol JourneyRepository {
     @discardableResult
-    func fetchMoviesList(
+    func fetchJourneyList(
         query: JourneyQuery,
         cached: @escaping () -> Void,
         completion: @escaping (Result<Void, Error>) -> Void
