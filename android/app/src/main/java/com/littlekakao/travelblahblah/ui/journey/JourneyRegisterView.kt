@@ -21,6 +21,8 @@ import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.littlekakao.travelblahblah.R
 import com.littlekakao.travelblahblah.ui.base.AppElevatedButton
 import com.littlekakao.travelblahblah.ui.base.BaseTextField
@@ -28,12 +30,14 @@ import com.littlekakao.travelblahblah.ui.base.BoldText
 import com.littlekakao.travelblahblah.ui.base.ExtraBoldText
 import com.littlekakao.travelblahblah.ui.theme.TravelblahblahTheme
 
+const val JOURNEY_REGISTER_ROUTE: String = "registration"
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun JourneyRegisterView() {
+fun JourneyRegisterView(navController: NavHostController) {
     Scaffold(
-        topBar = {JourneyRegisterTopAppBar()}
+        topBar = {JourneyRegisterTopAppBar(navController = navController)}
     )
     {
         Box(
@@ -42,20 +46,20 @@ fun JourneyRegisterView() {
                 .fillMaxSize(),
         )
         {
-            JourneyRegisterScreen()
+            JourneyRegisterScreen(navController = navController)
         }
     }
 }
 
 @ExperimentalMaterial3Api
 @Composable
-fun JourneyRegisterTopAppBar() {
+fun JourneyRegisterTopAppBar(navController: NavHostController) {
     CenterAlignedTopAppBar(
         title = {
             ExtraBoldText(stringResource(R.string.title_journey_register),28)
         },
         navigationIcon = {
-            IconButton(onClick = {/*TODO: 이전 화면으로 돌아가기*/}) {
+            IconButton(onClick = {navController.popBackStack()}) {
                 Icon(
                     painter = painterResource(R.drawable.ic_round_arrow_back),
                     contentDescription = stringResource(R.string.back)
@@ -70,7 +74,7 @@ fun JourneyRegisterTopAppBar() {
 }
 
 @Composable
-fun JourneyRegisterScreen(){
+fun JourneyRegisterScreen(navController: NavHostController){
     var where by rememberSaveable(stateSaver = TextFieldValue.Saver) {
         mutableStateOf(TextFieldValue("", TextRange(0, 7)))
     }
@@ -117,7 +121,7 @@ fun JourneyRegisterScreen(){
         {
             AppElevatedButton(
                 label = stringResource(R.string.journey_register),
-                onClick = {} // TODO: 여행 등록 후 리스트 이동
+                onClick = {navController.popBackStack()} // TODO: 여행 등록 후 리스트 이동
             )
         }
     }
@@ -126,7 +130,9 @@ fun JourneyRegisterScreen(){
 @Preview(showBackground = true)
 @Composable
 fun JourneyRegisterPreview() {
+    val navController = rememberNavController()
+
     TravelblahblahTheme {
-        JourneyRegisterView()
+        JourneyRegisterView(navController = navController)
     }
 }
