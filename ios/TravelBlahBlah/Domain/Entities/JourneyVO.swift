@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Journey: Codable {
+struct JourneyVO: Codable {
     
     let journeyId: Int?
     let journeyNm: String?

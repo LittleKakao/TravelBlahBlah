@@ -52,6 +52,13 @@ protocol DataTransferService {
         with endpoint: E,
         completion: @escaping CompletionHandler<Void>
     ) -> NetworkCancellable? where E.Response == Void
+    
+    @discardableResult
+    func request<E: ResponseRequestable>(
+        with endpoint: E,
+        on queue: DataTransferDispatchQueue,
+        completion: @escaping CompletionHandler<CreateJourneyResponseDTO>
+    ) -> NetworkCancellable?
 }
 
 protocol DataTransferErrorResolver {
@@ -84,6 +91,11 @@ final class DefaultDataTransferService {
 }
 
 extension DefaultDataTransferService: DataTransferService {
+    
+    func request<E>(with endpoint: E, on queue: DataTransferDispatchQueue, completion: @escaping CompletionHandler<CreateJourneyResponseDTO>) -> NetworkCancellable? where E : ResponseRequestable {
+        <#code#>
+    }
+    
     
     func request<T: Decodable, E: ResponseRequestable>(
         with endpoint: E,

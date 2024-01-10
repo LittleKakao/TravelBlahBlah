@@ -11,6 +11,7 @@ struct GetJourneyRequestDTO: Encodable {
     let query: String
 }
 
-struct createJourneyRequestDTO: Encodable {
-    
+struct CreateJourneyRequestDTO: Encodable {
+    let journeyNm: String
+    let journeyDest: String
 }

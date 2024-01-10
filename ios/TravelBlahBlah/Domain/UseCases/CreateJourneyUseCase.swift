@@ -17,7 +17,7 @@ protocol CreateJourneyUseCase {
 
 struct CreateJourneyUseCaseRequestValue {
     let query: JourneyQuery
-    let journey: Journey
+    let journey: JourneyVO
 }
 
 final class DefaultCreateJourneyUseCase: CreateJourneyUseCase {
