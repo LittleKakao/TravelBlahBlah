@@ -27,7 +27,6 @@ import com.littlekakao.travelblahblah.ui.base.BottomNavigation
 import com.littlekakao.travelblahblah.ui.theme.TravelblahblahTheme
 
 const val JOURNEY_ROUTE: String = "journey"
-const val JOURNEY_REGISTER_ROUTE: String = "registration"
 
 object CalendarMenu : BottomNavigation(
     R.string.text_calendar,
@@ -86,7 +85,10 @@ fun JourneyBottomNavigation(navController: NavHostController) {
                 onClick = {
                     navController.navigate(item.screenRoute) {
                         navController.graph.startDestinationRoute?.let {
-                            popUpTo(it) { saveState = true }
+                            popUpTo(it) {
+                                saveState = true
+                                inclusive = true
+                            }
                         }
                         launchSingleTop = true
                         restoreState = true
@@ -101,16 +103,15 @@ fun JourneyBottomNavigation(navController: NavHostController) {
 fun JourneyNavHost(navController: NavHostController) {
     fun onClickRegister() {
         navController.navigate(JOURNEY_REGISTER_ROUTE) {
-            navController.graph.startDestinationRoute?.let {
-                popUpTo(it) { saveState = true }
-            }
+            popUpTo(ListMenu.screenRoute) { saveState = true }
+
             launchSingleTop = true
             restoreState = true
         }
     }
 
     NavHost(navController = navController, startDestination = ListMenu.screenRoute) {
-        composable(JOURNEY_REGISTER_ROUTE) { JourneyRegisterView() }
+        composable(JOURNEY_REGISTER_ROUTE) { JourneyRegisterView(navController) }
         composable(ListMenu.screenRoute) { JourneyList(onClickRegister = {onClickRegister()}, navController)}
         composable(CalendarMenu.screenRoute) { JourneyCalendar(onClickRegister = {onClickRegister()}, navController) }
     }
