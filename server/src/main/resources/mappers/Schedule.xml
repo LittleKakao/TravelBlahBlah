@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.littlekakao.travelblahblah.schedule.mapper.ScheduleMapper">
+    <select id="findAllScheduleByJourneyId" parameterType="int" resultType="Schedule">
+        SELECT
+            *
+        FROM schedule
+        <where>
+            AND schedule_delete_yn = 'N'
+            <if test="journeyId != null and !journeyId.equals('')">
+                AND journey_id = #{journeyId}
+            </if>
+        </where>
+    </select>
+
+    <select id="findOneScheduleById" parameterType="string" resultType="Schedule">
+        SELECT
+            *
+        FROM schedule
+        <where>
+            AND schedule_delete_yn = 'N'
+            <if test="scheduleId != null and !scheduleId.equals('')">
+                AND schedule_id = #{scheduleId}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addSchedule" parameterType="Schedule">
+        INSERT INTO schedule
+        (
+            journey_id,
+            schedule_create_date,
+            schedule_update_date,
+            schedule_delete_yn,
+            <trim prefix="" suffixOverrides=",">
+                <if test='scheduleName != null and scheduleName != ""'>
+                    schedule_name,
+                </if>
+                <if test='scheduleDestination != null and scheduleDestination != ""'>
+                    schedule_destination,
+                </if>
+                <if test='scheduleStartDate != null and scheduleStartDate != ""'>
+                    schedule_start_date,
+                </if>
+                <if test='scheduleEndDate != null and scheduleEndDate != ""'>
+                    schedule_end_date,
+                </if>
+                <if test='scheduleMemo != null and scheduleMemo != ""'>
+                    schedule_memo,
+                </if>
+                <if test='categoryName != null and categoryName != ""'>
+                    category_name,
+                </if>
+                <if test='categoryColor != null and categoryColor != ""'>
+                    category_color,
+                </if>
+            </trim>
+        )
+        VALUES
+        (
+            #{journeyId},
+            NOW(),
+            NOW(),
+            'N',
+            <trim prefix="" suffixOverrides=",">
+                <if test='scheduleName != null and scheduleName != ""'>
+                    #{scheduleName},
+                </if>
+                <if test='scheduleDestination != null and scheduleDestination != ""'>
+                    #{scheduleDestination},
+                </if>
+                <if test='scheduleStartDate != null and scheduleStartDate != ""'>
+                    #{scheduleStartDate},
+                </if>
+                <if test='scheduleEndDate != null and scheduleEndDate != ""'>
+                    #{scheduleEndDate},
+                </if>
+                <if test='scheduleMemo != null and scheduleMemo != ""'>
+                    #{scheduleMemo},
+                </if>
+                <if test='categoryName != null and categoryName != ""'>
+                    #{categoryName},
+                </if>
+                <if test='categoryColor != null and categoryColor != ""'>
+                    #{categoryColor},
+                </if>
+            </trim>
+        )
+    </insert>
+
+    <update id="deleteSchedule" parameterType="Schedule">
+        UPDATE schedule
+            SET schedule_delete_yn = 'Y'
+        WHERE schedule_id = #{scheduleId}
+    </update>
+
+    <update id="updateSchedule">
+        UPDATE schedule
+            <set>
+                <if test='scheduleName != null and scheduleName != ""'>
+                    schedule_name = #{scheduleName},
+                </if>
+                <if test='scheduleDestination != null and scheduleDestination != ""'>
+                    schedule_destination = #{scheduleDestination},
+                </if>
+                <if test="scheduleStartDate != null and scheduleStartDate != ''">
+                    schedule_start_date = #{scheduleStartDate},
+                </if>
+                <if test="scheduleEndDate != null and scheduleEndDate != ''">
+                    schedule_end_date = #{scheduleEndDate},
+                </if>
+                <if test="scheduleMemo != null and scheduleMemo != ''">
+                    schedule_memo = #{scheduleMemo},
+                </if>
+                <if test="categoryName != null and categoryName != ''">
+                    category_name = #{categoryName},
+                </if>
+                <if test="categoryColor != null and categoryColor != ''">
+                    category_color = #{categoryColor},
+                </if>
+                schedule_update_date = NOW()
+            </set>
+        WHERE schedule_id = #{scheduleId}
+    </update>
+</mapper>
