@@ -28,37 +28,11 @@ protocol DataTransferService {
     typealias CompletionHandler<T> = (Result<T, DataTransferError>) -> Void
     
     @discardableResult
-    func request<T: Decodable, E: ResponseRequestable>(
-        with endpoint: E,
-        on queue: DataTransferDispatchQueue,
-        completion: @escaping CompletionHandler<T>
-    ) -> NetworkCancellable? where E.Response == T
-    
-    @discardableResult
-    func request<T: Decodable, E: ResponseRequestable>(
-        with endpoint: E,
-        completion: @escaping CompletionHandler<T>
-    ) -> NetworkCancellable? where E.Response == T
-
-    @discardableResult
-    func request<E: ResponseRequestable>(
-        with endpoint: E,
-        on queue: DataTransferDispatchQueue,
-        completion: @escaping CompletionHandler<Void>
-    ) -> NetworkCancellable? where E.Response == Void
-    
-    @discardableResult
-    func request<E: ResponseRequestable>(
-        with endpoint: E,
-        completion: @escaping CompletionHandler<Void>
-    ) -> NetworkCancellable? where E.Response == Void
-    
-    @discardableResult
     func request<E: ResponseRequestable>(
         with endpoint: E,
         on queue: DataTransferDispatchQueue,
         completion: @escaping CompletionHandler<CreateJourneyResponseDTO>
-    ) -> NetworkCancellable?
+    ) -> NetworkCancellable? where E.Response == CreateJourneyResponseDTO
 }
 
 protocol DataTransferErrorResolver {
@@ -92,24 +66,12 @@ final class DefaultDataTransferService {
 
 extension DefaultDataTransferService: DataTransferService {
     
-    func request<E>(with endpoint: E, on queue: DataTransferDispatchQueue, completion: @escaping CompletionHandler<CreateJourneyResponseDTO>) -> NetworkCancellable? where E : ResponseRequestable {
-        <#code#>
-    }
-    
-    
-    func request<T: Decodable, E: ResponseRequestable>(
-        with endpoint: E,
-        on queue: DataTransferDispatchQueue,
-        completion: @escaping CompletionHandler<T>
-    ) -> NetworkCancellable? where E.Response == T {
-
-        networkService.request(endpoint: endpoint) { result in
+    func request<E: ResponseRequestable>(with endpoint: E, on queue: DataTransferDispatchQueue, completion: @escaping CompletionHandler<CreateJourneyResponseDTO>) -> NetworkCancellable? where E.Response == CreateJourneyResponseDTO {
+        
+        return networkService.request(endpoint: endpoint) { result in
             switch result {
             case .success(let data):
-                let result: Result<T, DataTransferError> = self.decode(
-                    data: data,
-                    decoder: endpoint.responseDecoder
-                )
+                let result: Result<CreateJourneyResponseDTO, DataTransferError> = self.decode(data: data, decoder: endpoint.responseDecoder)
                 queue.asyncExecute { completion(result) }
             case .failure(let error):
                 self.errorLogger.log(error: error)
@@ -117,37 +79,6 @@ extension DefaultDataTransferService: DataTransferService {
                 queue.asyncExecute { completion(.failure(error)) }
             }
         }
-    }
-    
-    func request<T: Decodable, E: ResponseRequestable>(
-        with endpoint: E,
-        completion: @escaping CompletionHandler<T>
-    ) -> NetworkCancellable? where E.Response == T {
-        request(with: endpoint, on: DispatchQueue.main, completion: completion)
-    }
-
-    func request<E>(
-        with endpoint: E,
-        on queue: DataTransferDispatchQueue,
-        completion: @escaping CompletionHandler<Void>
-    ) -> NetworkCancellable? where E : ResponseRequestable, E.Response == Void {
-        networkService.request(endpoint: endpoint) { result in
-            switch result {
-            case .success:
-                queue.asyncExecute { completion(.success(())) }
-            case .failure(let error):
-                self.errorLogger.log(error: error)
-                let error = self.resolve(networkError: error)
-                queue.asyncExecute { completion(.failure(error)) }
-            }
-        }
-    }
-
-    func request<E>(
-        with endpoint: E,
-        completion: @escaping CompletionHandler<Void>
-    ) -> NetworkCancellable? where E : ResponseRequestable, E.Response == Void {
-        request(with: endpoint, on: DispatchQueue.main, completion: completion)
     }
 
     // MARK: - Private

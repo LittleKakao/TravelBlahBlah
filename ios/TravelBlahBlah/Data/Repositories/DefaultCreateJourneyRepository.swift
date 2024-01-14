@@ -29,6 +29,7 @@ final class DefaultCreateJourneyRepository: CreateJourneyRepository {
 }
 
 extension DefaultCreateJourneyRepository {
+    
     func createJourney(journey: CreateJourneyRequestDTO, completion: @escaping (Result<CreateJourneyResponseDTO, Error>) -> Void) -> Cancellable? {
         
         let endpoint = APIEndpoints.createJourney(with: journey)

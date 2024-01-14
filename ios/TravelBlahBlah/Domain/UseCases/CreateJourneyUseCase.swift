@@ -10,7 +10,6 @@ import Foundation
 protocol CreateJourneyUseCase {
     func execute(
         requestValue: CreateJourneyUseCaseRequestValue,
-        cached: @escaping () -> Void,
         completion: @escaping (Result<Void, Error>) -> Void
     ) -> Cancellable?
 }
@@ -32,15 +31,9 @@ final class DefaultCreateJourneyUseCase: CreateJourneyUseCase {
     
     func execute(
         requestValue: CreateJourneyUseCaseRequestValue,
-        cached: @escaping () -> Void,
         completion: @escaping (Result<Void, Error>) -> Void
     ) -> Cancellable? {
         
-        return journeyRepository.fetchJourneyList(
-            query: requestValue.query,
-            cached: cached
-        ) { result in
-            completion(result)
-        }
+        return
     }
 }
