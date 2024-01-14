@@ -10,8 +10,8 @@ import Foundation
 struct JourneyVO: Codable {
     
     let journeyId: Int?
-    let journeyNm: String?
-    let journeyDest: String?
+    let journeyNm: String
+    let journeyDest: String
     let userId: String?
     let createAt: String?
     let updateAt: String?

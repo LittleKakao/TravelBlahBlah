@@ -9,12 +9,13 @@ import Foundation
 
 protocol CreateJourneyRepository {
     func createJourney(
-        journey: CreateJourneyRequestDTO,
+        journeyNm: String,
+        journeyDest: String,
         completion: @escaping (Result<CreateJourneyResponseDTO, Error>) -> Void
     ) -> Cancellable?
 }
 
-final class DefaultCreateJourneyRepository: CreateJourneyRepository {
+final class DefaultCreateJourneyRepository {
     
     private let dataTransferService: DataTransferService
     private let backgroundQueue: DataTransferDispatchQueue
@@ -28,10 +29,11 @@ final class DefaultCreateJourneyRepository: CreateJourneyRepository {
     }
 }
 
-extension DefaultCreateJourneyRepository {
+extension DefaultCreateJourneyRepository: CreateJourneyRepository {
     
-    func createJourney(journey: CreateJourneyRequestDTO, completion: @escaping (Result<CreateJourneyResponseDTO, Error>) -> Void) -> Cancellable? {
+    func createJourney(journeyNm: String, journeyDest: String, completion: @escaping (Result<CreateJourneyResponseDTO, Error>) -> Void) -> Cancellable? {
         
+        let journey = CreateJourneyRequestDTO(journeyNm: journeyNm, journeyDest: journeyDest)
         let endpoint = APIEndpoints.createJourney(with: journey)
         let task = RepositoryTask()
         

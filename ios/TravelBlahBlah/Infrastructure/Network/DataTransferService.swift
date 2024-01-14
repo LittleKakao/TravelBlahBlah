@@ -66,12 +66,12 @@ final class DefaultDataTransferService {
 
 extension DefaultDataTransferService: DataTransferService {
     
-    func request<E: ResponseRequestable>(with endpoint: E, on queue: DataTransferDispatchQueue, completion: @escaping CompletionHandler<CreateJourneyResponseDTO>) -> NetworkCancellable? where E.Response == CreateJourneyResponseDTO {
+    func request<T: Decodable,E: ResponseRequestable>(with endpoint: E, on queue: DataTransferDispatchQueue, completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where E.Response == T {
         
         return networkService.request(endpoint: endpoint) { result in
             switch result {
             case .success(let data):
-                let result: Result<CreateJourneyResponseDTO, DataTransferError> = self.decode(data: data, decoder: endpoint.responseDecoder)
+                let result: Result<T, DataTransferError> = self.decode(data: data, decoder: endpoint.responseDecoder)
                 queue.asyncExecute { completion(result) }
             case .failure(let error):
                 self.errorLogger.log(error: error)

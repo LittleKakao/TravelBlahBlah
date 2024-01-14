@@ -9,7 +9,7 @@ import Foundation
 
 struct APIEndpoints {
     
-    static func createJourney(with createJourneyRequestDTO: CreateJourneyRequestDTO) -> Endpoint<CreateJourneyRequestDTO> {
+    static func createJourney(with createJourneyRequestDTO: CreateJourneyRequestDTO) -> Endpoint<CreateJourneyResponseDTO> {
         
         return Endpoint(
             path: "journey",
