@@ -9,6 +9,7 @@ spring:
 mybatis:
   mapper-locations: mappers/**.xml
   config-location: classpath:/mybatis-config.xml
+  type-aliases-package: com.littlekakao.travelblahblah
 
 # Swagger
 springdoc:
