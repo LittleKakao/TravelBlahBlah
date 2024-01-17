@@ -7,10 +7,14 @@
 
 import UIKit
 
+struct CreateJourneyViewModelActions {
+    
+}
+
 protocol CreateJourneyViewModelInput {
     func viewDidLoad()
     func didCancel()
-    
+    func didCreate()
 }
 
 protocol CreateJourneyViewModelOutput {
@@ -27,6 +31,10 @@ typealias CreateJourneyViewModel = CreateJourneyViewModelInput & CreateJourneyVi
 
 final class DefaultCreateJourneyViewModel: CreateJourneyViewModel {
     
+    private let createJourneyUseCase: CreateJourneyUseCase
+    private let actions: CreateJourneyViewModelActions?
+    private let mainQueue: DispatchQueueType
+    
     // MARK: - OUTPUT
     
     let keyBoardType: UIKeyboardType = .default
@@ -38,9 +46,13 @@ final class DefaultCreateJourneyViewModel: CreateJourneyViewModel {
     // MARK: - Init
     
     init(
-    
+        createJourneyUseCase: CreateJourneyUseCase,
+        actions: CreateJourneyViewModelActions? = nil,
+        mainQueue: DispatchQueueType = DispatchQueue.main
     ) {
-        
+        self.createJourneyUseCase = createJourneyUseCase
+        self.actions = actions
+        self.mainQueue = mainQueue
     }
     
     // MARK: - Private
@@ -57,6 +69,10 @@ extension DefaultCreateJourneyViewModel {
     }
     
     func didCancel() {
+        
+    }
+    
+    func didCreate() {
         
     }
 }

@@ -49,6 +49,6 @@ class CreateJourneyViewController: UIViewController, UITextViewDelegate, Storybo
     }
     
     @IBAction func createButtonTapped(_ sender: UIButton) {
-        
+        viewModel.didCreate()
     }
 }
