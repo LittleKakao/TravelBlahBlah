@@ -98,7 +98,6 @@ fun JourneyRegisterScreen(navController: NavHostController){
                 BoldText(stringResource(R.string.journey_register_where),20)
                 BaseTextField(value = where, onValueChange = {where = it})
             }
-
         }
         Spacer(Modifier.height(100.dp))
         Box(
