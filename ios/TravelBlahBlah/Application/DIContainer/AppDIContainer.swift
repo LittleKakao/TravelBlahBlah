@@ -27,7 +27,9 @@ final class AppDIContainer {
     
     // MARK: - DIContainers of scenes
     func makeJourneySceneDIContainer() -> JourneySceneDIContainer {
-        let dependencies = JourneySceneDIContainer.Dependencies()
+        let dependencies = JourneySceneDIContainer.Dependencies(
+            apiDataTransferService: apiDataTransferService
+        )
         return JourneySceneDIContainer(dependencies: dependencies)
     }
 }

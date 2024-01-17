@@ -14,7 +14,7 @@ struct CreateJourneyViewModelActions {
 protocol CreateJourneyViewModelInput {
     func viewDidLoad()
     func didCancel()
-    func didCreate()
+    func didCreate(contry: String, title: String)
 }
 
 protocol CreateJourneyViewModelOutput {
@@ -33,6 +33,8 @@ final class DefaultCreateJourneyViewModel: CreateJourneyViewModel {
     
     private let createJourneyUseCase: CreateJourneyUseCase
     private let actions: CreateJourneyViewModelActions?
+    
+    private var journeyCreateTask: Cancellable? { willSet { journeyCreateTask?.cancel() } }
     private let mainQueue: DispatchQueueType
     
     // MARK: - OUTPUT
@@ -57,7 +59,19 @@ final class DefaultCreateJourneyViewModel: CreateJourneyViewModel {
     
     // MARK: - Private
 
-    
+    private func create(contry: String, title: String) {
+        
+        journeyCreateTask = createJourneyUseCase.execute(requestValue: .init(journeyNm: title, journeyDest: contry), completion: { [weak self] result in
+            self?.mainQueue.async {
+                switch result {
+                case .success(let data):
+                    print(data)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        })
+    }
 }
 
 // MARK: - INPUT. View event methods
@@ -72,7 +86,7 @@ extension DefaultCreateJourneyViewModel {
         
     }
     
-    func didCreate() {
-        
+    func didCreate(contry: String, title: String) {
+        create(contry: contry, title: title)
     }
 }

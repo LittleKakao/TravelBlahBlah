@@ -34,6 +34,7 @@
 		28D90CB82B1625C800D2851B /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D90CB72B1625C800D2851B /* AppFlowCoordinator.swift */; };
 		28E83DB92B1334E800D6D175 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E83DB82B1334E800D6D175 /* StoryboardInstantiable.swift */; };
 		28F21B732B4ED03000C1933C /* DefaultCreateJourneyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F21B722B4ED03000C1933C /* DefaultCreateJourneyRepository.swift */; };
+		28FA3C342B58027E002C0FA3 /* DispatchQueueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FA3C332B58027E002C0FA3 /* DispatchQueueType.swift */; };
 		28FB01FA2B3EFB7E0059349C /* CreateJourneyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB01F92B3EFB7E0059349C /* CreateJourneyUseCase.swift */; };
 		28FB01FD2B3EFC520059349C /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB01FC2B3EFC520059349C /* Cancellable.swift */; };
 		28FB01FF2B3EFD3D0059349C /* JourneyQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB01FE2B3EFD3D0059349C /* JourneyQuery.swift */; };
@@ -96,6 +97,7 @@
 		28D90CB72B1625C800D2851B /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		28E83DB82B1334E800D6D175 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		28F21B722B4ED03000C1933C /* DefaultCreateJourneyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCreateJourneyRepository.swift; sourceTree = "<group>"; };
+		28FA3C332B58027E002C0FA3 /* DispatchQueueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueType.swift; sourceTree = "<group>"; };
 		28FB01F92B3EFB7E0059349C /* CreateJourneyUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJourneyUseCase.swift; sourceTree = "<group>"; };
 		28FB01FC2B3EFC520059349C /* Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cancellable.swift; path = TravelBlahBlah/Common/Cancellable.swift; sourceTree = SOURCE_ROOT; };
 		28FB01FE2B3EFD3D0059349C /* JourneyQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyQuery.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			children = (
 				28FB01FC2B3EFC520059349C /* Cancellable.swift */,
 				2801C5F72B098B8700EA886C /* ConnectionError.swift */,
+				28FA3C332B58027E002C0FA3 /* DispatchQueueType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				2801C5F82B098B8700EA886C /* ConnectionError.swift in Sources */,
 				28A638AB2B41AD930006C620 /* Endpoint.swift in Sources */,
 				2801C5F52B098A1F00EA886C /* AppDIContainer.swift in Sources */,
+				28FA3C342B58027E002C0FA3 /* DispatchQueueType.swift in Sources */,
 				28486DCA2B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift in Sources */,
 				28E83DB92B1334E800D6D175 /* StoryboardInstantiable.swift in Sources */,
 				2801C5FA2B098DDA00EA886C /* DefaultJourneyRepository.swift in Sources */,

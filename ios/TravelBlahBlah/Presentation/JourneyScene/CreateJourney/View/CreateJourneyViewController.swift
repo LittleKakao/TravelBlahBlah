@@ -49,6 +49,10 @@ class CreateJourneyViewController: UIViewController, UITextViewDelegate, Storybo
     }
     
     @IBAction func createButtonTapped(_ sender: UIButton) {
-        viewModel.didCreate()
+        
+        let countryText = contryTextField.text ?? ""
+        let titleText = titleField.text ?? ""
+        
+        viewModel.didCreate(contry: countryText, title: titleText)
     }
 }
