@@ -47,4 +47,8 @@ class CreateJourneyViewController: UIViewController, UITextViewDelegate, Storybo
         titleField.clearButtonMode = viewModel.clearButtonMode
         
     }
+    
+    @IBAction func createButtonTapped(_ sender: UIButton) {
+        
+    }
 }
