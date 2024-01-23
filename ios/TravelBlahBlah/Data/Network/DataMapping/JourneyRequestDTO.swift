@@ -7,6 +7,17 @@
 
 import Foundation
 
-struct JourneyRequestDTO: Decodable {
-    
+struct GetJourneyRequestDTO: Encodable {
+    let query: String
+}
+
+struct CreateJourneyRequestDTO: Encodable {
+    let journeyName: String
+    let journeyDestination: String
+    var journeyStartDate: Date {
+        return Date()
+    }
+    var journeyEndDate: Date {
+        return Date()
+    }
 }

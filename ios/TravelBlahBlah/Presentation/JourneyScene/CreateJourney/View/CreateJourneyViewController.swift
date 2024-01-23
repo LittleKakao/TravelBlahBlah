@@ -30,6 +30,9 @@ class CreateJourneyViewController: UIViewController, UITextViewDelegate, Storybo
         
         configureUI()
         
+        // Add Touch
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGesture)
     }
     
     // MARK: - INPUT
@@ -46,5 +49,18 @@ class CreateJourneyViewController: UIViewController, UITextViewDelegate, Storybo
         titleField.borderStyle = viewModel.boardStyle
         titleField.clearButtonMode = viewModel.clearButtonMode
         
+    }
+    
+    @objc private func handleTap() {
+        // 터치 이벤트가 발생했을 때, 키보드를 내림
+        view.endEditing(true)
+    }
+    
+    @IBAction func createButtonTapped(_ sender: UIButton) {
+        
+        let countryText = contryTextField.text ?? ""
+        let titleText = titleField.text ?? ""
+        
+        viewModel.didCreate(contry: countryText, title: titleText)
     }
 }

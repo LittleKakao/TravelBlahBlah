@@ -17,14 +17,24 @@
 		2801C6072B098FDE00EA886C /* TestMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801C6062B098FDE00EA886C /* TestMocks.swift */; };
 		2801C60E2B0990A700EA886C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801C60D2B0990A700EA886C /* MainViewModel.swift */; };
 		2801C6102B09922700EA886C /* TestStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2801C60F2B09922700EA886C /* TestStubs.swift */; };
+		282ADD6C2B4846DE003B7FF4 /* JourneyResponseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282ADD6B2B4846DE003B7FF4 /* JourneyResponseStorage.swift */; };
 		28486DCA2B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28486DC92B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift */; };
-		286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C42ACEF59A008EC81C /* JourneyModel.swift */; };
+		286450492B46E140000B9983 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286450482B46E140000B9983 /* RepositoryTask.swift */; };
+		2864504B2B46E414000B9983 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864504A2B46E414000B9983 /* CoreDataStorage.swift */; };
+		2864504D2B46ED14000B9983 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864504C2B46ED14000B9983 /* APIEndpoints.swift */; };
+		286B55C52ACEF59A008EC81C /* JourneyVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C42ACEF59A008EC81C /* JourneyVO.swift */; };
 		286B55C72ACEF5AA008EC81C /* CreateJourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */; };
+		28A638A52B41A5CD0006C620 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A638A42B41A5CD0006C620 /* AppConfigurations.swift */; };
+		28A638A72B41A9E10006C620 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A638A62B41A9E10006C620 /* DataTransferService.swift */; };
+		28A638A92B41AB030006C620 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A638A82B41AB030006C620 /* NetworkService.swift */; };
+		28A638AB2B41AD930006C620 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A638AA2B41AD930006C620 /* Endpoint.swift */; };
 		28D205142ADBC6FE00FCB971 /* CreateJourneyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D205132ADBC6FE00FCB971 /* CreateJourneyViewController.storyboard */; };
 		28D205162ADBC78800FCB971 /* CreateJourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D205152ADBC78800FCB971 /* CreateJourneyViewController.swift */; };
 		28D90CB62B16224100D2851B /* JourneySceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D90CB52B16224100D2851B /* JourneySceneDIContainer.swift */; };
 		28D90CB82B1625C800D2851B /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D90CB72B1625C800D2851B /* AppFlowCoordinator.swift */; };
 		28E83DB92B1334E800D6D175 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E83DB82B1334E800D6D175 /* StoryboardInstantiable.swift */; };
+		28F21B732B4ED03000C1933C /* DefaultCreateJourneyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F21B722B4ED03000C1933C /* DefaultCreateJourneyRepository.swift */; };
+		28FA3C342B58027E002C0FA3 /* DispatchQueueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FA3C332B58027E002C0FA3 /* DispatchQueueType.swift */; };
 		28FB01FA2B3EFB7E0059349C /* CreateJourneyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB01F92B3EFB7E0059349C /* CreateJourneyUseCase.swift */; };
 		28FB01FD2B3EFC520059349C /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB01FC2B3EFC520059349C /* Cancellable.swift */; };
 		28FB01FF2B3EFD3D0059349C /* JourneyQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB01FE2B3EFD3D0059349C /* JourneyQuery.swift */; };
@@ -69,14 +79,25 @@
 		2801C6062B098FDE00EA886C /* TestMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMocks.swift; sourceTree = "<group>"; };
 		2801C60D2B0990A700EA886C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		2801C60F2B09922700EA886C /* TestStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStubs.swift; sourceTree = "<group>"; };
+		282ADD6B2B4846DE003B7FF4 /* JourneyResponseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyResponseStorage.swift; sourceTree = "<group>"; };
 		28486DC92B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneySceneFlowCoordinator.swift; sourceTree = "<group>"; };
-		286B55C42ACEF59A008EC81C /* JourneyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyModel.swift; sourceTree = "<group>"; };
+		286450482B46E140000B9983 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
+		2864504A2B46E414000B9983 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		2864504C2B46ED14000B9983 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		286B55C42ACEF59A008EC81C /* JourneyVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyVO.swift; sourceTree = "<group>"; };
 		286B55C62ACEF5AA008EC81C /* CreateJourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyViewModel.swift; sourceTree = "<group>"; };
+		28A638A32B41A4BB0006C620 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		28A638A42B41A5CD0006C620 /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
+		28A638A62B41A9E10006C620 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		28A638A82B41AB030006C620 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		28A638AA2B41AD930006C620 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		28D205132ADBC6FE00FCB971 /* CreateJourneyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateJourneyViewController.storyboard; sourceTree = "<group>"; };
 		28D205152ADBC78800FCB971 /* CreateJourneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJourneyViewController.swift; sourceTree = "<group>"; };
 		28D90CB52B16224100D2851B /* JourneySceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneySceneDIContainer.swift; sourceTree = "<group>"; };
 		28D90CB72B1625C800D2851B /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		28E83DB82B1334E800D6D175 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		28F21B722B4ED03000C1933C /* DefaultCreateJourneyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCreateJourneyRepository.swift; sourceTree = "<group>"; };
+		28FA3C332B58027E002C0FA3 /* DispatchQueueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueType.swift; sourceTree = "<group>"; };
 		28FB01F92B3EFB7E0059349C /* CreateJourneyUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJourneyUseCase.swift; sourceTree = "<group>"; };
 		28FB01FC2B3EFC520059349C /* Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cancellable.swift; path = TravelBlahBlah/Common/Cancellable.swift; sourceTree = SOURCE_ROOT; };
 		28FB01FE2B3EFD3D0059349C /* JourneyQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyQuery.swift; sourceTree = "<group>"; };
@@ -128,6 +149,7 @@
 				28FEB9E42AB698B5000F38B8 /* AppDelegate.swift */,
 				28FEB9E62AB698B5000F38B8 /* SceneDelegate.swift */,
 				28D90CB72B1625C800D2851B /* AppFlowCoordinator.swift */,
+				28A638A42B41A5CD0006C620 /* AppConfigurations.swift */,
 				2801C5E52B09844400EA886C /* DIContainer */,
 			);
 			path = Application;
@@ -210,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				2801C5FB2B098E5700EA886C /* DataMapping */,
+				2864504C2B46ED14000B9983 /* APIEndpoints.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -217,7 +240,8 @@
 		2801C5E72B09846B00EA886C /* PersistentStorages */ = {
 			isa = PBXGroup;
 			children = (
-				28FEB9ED2AB698B5000F38B8 /* TravelBlahBlah.xcdatamodeld */,
+				282ADD692B484631003B7FF4 /* CoreDataStorage */,
+				282ADD6A2B484673003B7FF4 /* JourneyResponseStorage */,
 			);
 			path = PersistentStorages;
 			sourceTree = "<group>";
@@ -225,7 +249,9 @@
 		2801C5E82B09847300EA886C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				286450472B46E129000B9983 /* Utils */,
 				2801C5F92B098DDA00EA886C /* DefaultJourneyRepository.swift */,
+				28F21B722B4ED03000C1933C /* DefaultCreateJourneyRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -234,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				28FB01FE2B3EFD3D0059349C /* JourneyQuery.swift */,
-				286B55C42ACEF59A008EC81C /* JourneyModel.swift */,
+				286B55C42ACEF59A008EC81C /* JourneyVO.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -267,7 +293,10 @@
 		2801C5ED2B09850300EA886C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				28A638A62B41A9E10006C620 /* DataTransferService.swift */,
+				28A638AA2B41AD930006C620 /* Endpoint.swift */,
 				2801C6042B098F8600EA886C /* NetworkConfig.swift */,
+				28A638A82B41AB030006C620 /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -328,6 +357,7 @@
 			children = (
 				28FB01FC2B3EFC520059349C /* Cancellable.swift */,
 				2801C5F72B098B8700EA886C /* ConnectionError.swift */,
+				28FA3C332B58027E002C0FA3 /* DispatchQueueType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -367,12 +397,37 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		282ADD692B484631003B7FF4 /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				28FEB9ED2AB698B5000F38B8 /* TravelBlahBlah.xcdatamodeld */,
+				2864504A2B46E414000B9983 /* CoreDataStorage.swift */,
+			);
+			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		282ADD6A2B484673003B7FF4 /* JourneyResponseStorage */ = {
+			isa = PBXGroup;
+			children = (
+				282ADD6B2B4846DE003B7FF4 /* JourneyResponseStorage.swift */,
+			);
+			path = JourneyResponseStorage;
+			sourceTree = "<group>";
+		};
 		28486DC82B2D73D8004BADB0 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
 				28486DC92B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift */,
 			);
 			path = Flows;
+			sourceTree = "<group>";
+		};
+		286450472B46E129000B9983 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				286450482B46E140000B9983 /* RepositoryTask.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		28E83DB72B1334C500D6D175 /* Protocols */ = {
@@ -394,6 +449,7 @@
 		28FEB9D82AB698B5000F38B8 = {
 			isa = PBXGroup;
 			children = (
+				28A638A32B41A4BB0006C620 /* Secrets.xcconfig */,
 				28FEB9E32AB698B5000F38B8 /* TravelBlahBlah */,
 				28FEB9FD2AB698B6000F38B8 /* TravelBlahBlahTests */,
 				28FEBA072AB698B6000F38B8 /* TravelBlahBlahUITests */,
@@ -577,20 +633,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				2801C5F82B098B8700EA886C /* ConnectionError.swift in Sources */,
+				28A638AB2B41AD930006C620 /* Endpoint.swift in Sources */,
 				2801C5F52B098A1F00EA886C /* AppDIContainer.swift in Sources */,
+				28FA3C342B58027E002C0FA3 /* DispatchQueueType.swift in Sources */,
 				28486DCA2B2D745F004BADB0 /* JourneySceneFlowCoordinator.swift in Sources */,
 				28E83DB92B1334E800D6D175 /* StoryboardInstantiable.swift in Sources */,
 				2801C5FA2B098DDA00EA886C /* DefaultJourneyRepository.swift in Sources */,
+				2864504B2B46E414000B9983 /* CoreDataStorage.swift in Sources */,
 				28FB02022B3EFD8F0059349C /* UseCase.swift in Sources */,
+				28A638A92B41AB030006C620 /* NetworkService.swift in Sources */,
 				2801C6012B098F0E00EA886C /* JourneyRepository.swift in Sources */,
 				28FEB9E92AB698B5000F38B8 /* MainViewController.swift in Sources */,
 				28D205162ADBC78800FCB971 /* CreateJourneyViewController.swift in Sources */,
+				28A638A72B41A9E10006C620 /* DataTransferService.swift in Sources */,
 				28FEB9E52AB698B5000F38B8 /* AppDelegate.swift in Sources */,
 				2801C6072B098FDE00EA886C /* TestMocks.swift in Sources */,
 				2801C6102B09922700EA886C /* TestStubs.swift in Sources */,
+				28F21B732B4ED03000C1933C /* DefaultCreateJourneyRepository.swift in Sources */,
+				282ADD6C2B4846DE003B7FF4 /* JourneyResponseStorage.swift in Sources */,
+				28A638A52B41A5CD0006C620 /* AppConfigurations.swift in Sources */,
 				28D90CB82B1625C800D2851B /* AppFlowCoordinator.swift in Sources */,
 				286B55C72ACEF5AA008EC81C /* CreateJourneyViewModel.swift in Sources */,
-				286B55C52ACEF59A008EC81C /* JourneyModel.swift in Sources */,
+				286B55C52ACEF59A008EC81C /* JourneyVO.swift in Sources */,
 				2801C5FD2B098E8800EA886C /* JourneyRequestDTO.swift in Sources */,
 				28D90CB62B16224100D2851B /* JourneySceneDIContainer.swift in Sources */,
 				2801C6052B098F8600EA886C /* NetworkConfig.swift in Sources */,
@@ -598,6 +662,8 @@
 				28FEB9E72AB698B5000F38B8 /* SceneDelegate.swift in Sources */,
 				28FEB9EF2AB698B5000F38B8 /* TravelBlahBlah.xcdatamodeld in Sources */,
 				28FB01FA2B3EFB7E0059349C /* CreateJourneyUseCase.swift in Sources */,
+				2864504D2B46ED14000B9983 /* APIEndpoints.swift in Sources */,
+				286450492B46E140000B9983 /* RepositoryTask.swift in Sources */,
 				28FB01FD2B3EFC520059349C /* Cancellable.swift in Sources */,
 				2801C60E2B0990A700EA886C /* MainViewModel.swift in Sources */,
 				28FB01FF2B3EFD3D0059349C /* JourneyQuery.swift in Sources */,
@@ -772,6 +838,7 @@
 		};
 		28FEBA0F2AB698B6000F38B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A638A32B41A4BB0006C620 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -802,6 +869,7 @@
 		};
 		28FEBA102AB698B6000F38B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A638A32B41A4BB0006C620 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -832,6 +900,7 @@
 		};
 		28FEBA122AB698B6000F38B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A638A32B41A4BB0006C620 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

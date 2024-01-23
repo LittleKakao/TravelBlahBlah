@@ -10,20 +10,32 @@ import Foundation
 protocol CreateJourneyUseCase {
     func execute(
         requestValue: CreateJourneyUseCaseRequestValue,
-        cached: @escaping () -> Void,
-        comletion: @escaping () -> Void
+        completion: @escaping (Result<CreateJourneyResponseDTO, Error>) -> Void
     ) -> Cancellable?
 }
 
 struct CreateJourneyUseCaseRequestValue {
-    let query: JourneyQuery
-    let journey: Journey
+    let journeyName: String
+    let journeyDestination: String
 }
 
-//final class DefaultCreateJourneyUseCase: CreateJourneyUseCase {
-//    
-//    func execute(requestValue: CreateJourneyUseCaseRequestValue, cached: @escaping () -> Void, comletion: @escaping () -> Void) -> Cancellable? {
-//        
-//        return 
-//    }
-//}
+final class DefaultCreateJourneyUseCase: CreateJourneyUseCase {
+    
+    private let createJourneyRepository: CreateJourneyRepository
+    
+    init(
+        createJourneyRepository: CreateJourneyRepository
+    ) {
+        self.createJourneyRepository = createJourneyRepository
+    }
+    
+    func execute(
+        requestValue: CreateJourneyUseCaseRequestValue,
+        completion: @escaping (Result<CreateJourneyResponseDTO, Error>) -> Void
+    ) -> Cancellable? {
+        
+        return createJourneyRepository.createJourney(journeyName: requestValue.journeyName, journeyDestination: requestValue.journeyDestination, completion: { result in
+                completion(result)
+        })
+    }
+}

@@ -10,13 +10,24 @@ import UIKit
 final class JourneySceneDIContainer: JourneySceneFlowCoordinatorDependencies {
     
     struct Dependencies {
-        
+        let apiDataTransferService: DataTransferService
     }
     private let dependencies: Dependencies
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
+    
+    // MARK: - Use Case
+    func makeCreateJourneyUseCase() -> CreateJourneyUseCase {
+        DefaultCreateJourneyUseCase(createJourneyRepository: makeCreateJourneyRepository())
+    }
+    
+    // MARK: - Repositories
+    func makeCreateJourneyRepository() -> CreateJourneyRepository {
+        DefaultCreateJourneyRepository(dataTransferService: dependencies.apiDataTransferService)
+    }
+    
     
     // MARK: - Main Scene
     func makeMainViewController(actions: MainViewModelActions) -> MainViewController {
@@ -37,7 +48,7 @@ final class JourneySceneDIContainer: JourneySceneFlowCoordinatorDependencies {
     }
     
     func makeCreateJourneyViewModel() -> CreateJourneyViewModel {
-        DefaultCreateJourneyViewModel()
+        DefaultCreateJourneyViewModel(createJourneyUseCase: makeCreateJourneyUseCase())
     }
     
     // MARK: - Flow Coordinators
