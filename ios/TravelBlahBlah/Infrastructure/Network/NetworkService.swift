@@ -103,7 +103,8 @@ extension DefaultNetworkService: NetworkService {
         completion: @escaping CompletionHandler
     ) -> NetworkCancellable? {
         do {
-            let urlRequest = try endpoint.urlRequest(with: config)
+            var urlRequest = try endpoint.urlRequest(with: config)
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
             return request(request: urlRequest, completion: completion)
         } catch {
             completion(.failure(.urlGeneration))
