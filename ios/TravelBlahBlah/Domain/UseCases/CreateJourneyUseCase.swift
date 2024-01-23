@@ -15,8 +15,8 @@ protocol CreateJourneyUseCase {
 }
 
 struct CreateJourneyUseCaseRequestValue {
-    let journeyNm: String
-    let journeyDest: String
+    let journeyName: String
+    let journeyDestination: String
 }
 
 final class DefaultCreateJourneyUseCase: CreateJourneyUseCase {
@@ -34,7 +34,7 @@ final class DefaultCreateJourneyUseCase: CreateJourneyUseCase {
         completion: @escaping (Result<CreateJourneyResponseDTO, Error>) -> Void
     ) -> Cancellable? {
         
-        return createJourneyRepository.createJourney(journeyNm: requestValue.journeyNm, journeyDest: requestValue.journeyDest, completion: { result in
+        return createJourneyRepository.createJourney(journeyName: requestValue.journeyName, journeyDestination: requestValue.journeyDestination, completion: { result in
                 completion(result)
         })
     }

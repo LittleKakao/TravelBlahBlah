@@ -61,7 +61,7 @@ final class DefaultCreateJourneyViewModel: CreateJourneyViewModel {
 
     private func create(contry: String, title: String) {
         
-        journeyCreateTask = createJourneyUseCase.execute(requestValue: .init(journeyNm: title, journeyDest: contry), completion: { [weak self] result in
+        journeyCreateTask = createJourneyUseCase.execute(requestValue: .init(journeyName: title, journeyDestination: contry), completion: { [weak self] result in
             self?.mainQueue.async {
                 switch result {
                 case .success(let data):

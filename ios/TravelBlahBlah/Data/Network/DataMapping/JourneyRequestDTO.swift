@@ -12,6 +12,12 @@ struct GetJourneyRequestDTO: Encodable {
 }
 
 struct CreateJourneyRequestDTO: Encodable {
-    let journeyNm: String
-    let journeyDest: String
+    let journeyName: String
+    let journeyDestination: String
+    var journeyStartDate: Date {
+        return Date()
+    }
+    var journeyEndDate: Date {
+        return Date()
+    }
 }
