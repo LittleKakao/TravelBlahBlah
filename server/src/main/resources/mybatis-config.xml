@@ -5,8 +5,4 @@
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
-    <typeAliases>
-        <package name="com.littlekakao.travelblahblah.journey.domain"/>
-        <package name="com.littlekakao.travelblahblah.user.domain"/>
-    </typeAliases>
 </configuration>
