@@ -1,24 +1,27 @@
 package com.littlekakao.travelblahblah.journey.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.Date;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 public class Journey {
 
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @Schema(description = "여정 pk", example = "0")
     private int journeyId;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @Schema(description = "유저 pk", example = "0")
     private int userId;
+    @Schema(description = "여정 제목", example = "미국 여행")
     private String journeyName;
+    @Schema(description = "여정 목적지", example = "미국")
     private String journeyDestination;
-    private Date journeyStartDate;
-    private Date journeyEndDate;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private Date journeyCreateDate;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private Date journeyUpdateDate;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @Schema(description = "여정 시작 날짜", example = "2024-01-01 00:00:00")
+    private String journeyStartDate;
+    @Schema(description = "여정 종료 날짜", example = "2024-01-01 00:00:00")
+    private String journeyEndDate;
+    @Schema(description = "여정 데이터 생성 시각", example = "2024-01-01 00:00:00")
+    private String journeyCreateDate;
+    @Schema(description = "여정 데이터 수정 시각", example = "2024-01-01 00:00:00")
+    private String journeyUpdateDate;
+    @Schema(description = "여정 삭제 여부", example = "N")
     private String journeyDeleteYn;
 
     public int getJourneyId() {
@@ -53,35 +56,35 @@ public class Journey {
         this.journeyDestination = journeyDestination;
     }
 
-    public Date getJourneyStartDate() {
+    public String getJourneyStartDate() {
         return journeyStartDate;
     }
 
-    public void setJourneyStartDate(Date journeyStartDate) {
+    public void setJourneyStartDate(String journeyStartDate) {
         this.journeyStartDate = journeyStartDate;
     }
 
-    public Date getJourneyEndDate() {
+    public String getJourneyEndDate() {
         return journeyEndDate;
     }
 
-    public void setJourneyEndDate(Date journeyEndDate) {
+    public void setJourneyEndDate(String journeyEndDate) {
         this.journeyEndDate = journeyEndDate;
     }
 
-    public Date getJourneyCreateDate() {
+    public String getJourneyCreateDate() {
         return journeyCreateDate;
     }
 
-    public void setJourneyCreateDate(Date journeyCreateDate) {
+    public void setJourneyCreateDate(String journeyCreateDate) {
         this.journeyCreateDate = journeyCreateDate;
     }
 
-    public Date getJourneyUpdateDate() {
+    public String getJourneyUpdateDate() {
         return journeyUpdateDate;
     }
 
-    public void setJourneyUpdateDate(Date journeyUpdateDate) {
+    public void setJourneyUpdateDate(String journeyUpdateDate) {
         this.journeyUpdateDate = journeyUpdateDate;
     }
 
