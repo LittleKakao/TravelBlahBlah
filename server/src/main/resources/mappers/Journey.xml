@@ -4,18 +4,18 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.littlekakao.travelblahblah.journey.mapper.JourneyMapper">
 
-    <select id="selectJourneyAll" resultType="Journey">
+    <select id="findJourneyAll" resultType="Journey">
         SELECT *
         FROM journey
     </select>
 
-    <select id="selectJourneyByJourneyId" resultType="Journey">
+    <select id="findJourneyByJourneyId" resultType="Journey">
         SELECT *
         FROM journey
         WHERE journey_id = #{journeyId}
     </select>
 
-    <insert id="insertJourney" parameterType="Journey">
+    <insert id="addJourney" parameterType="Journey" useGeneratedKeys="true" keyProperty="journeyId">
         INSERT INTO journey (
                              user_id,
                              journey_name,
@@ -37,7 +37,7 @@
             )
     </insert>
 
-    <update id="updateJourneyByJourneyId" parameterType="map">
+    <update id="modifyJourneyByJourneyId" parameterType="map">
         UPDATE journey
         SET journey_name = #{journey.journeyName},
             journey_destination = #{journey.journeyDestination},
@@ -47,11 +47,11 @@
         WHERE journey_id = #{journeyId}
     </update>
 
-    <delete id="deleteJourneyByJourneyId" parameterType="int">
-        DELETE
-        FROM journey
+    <update id="removeJourneyByJourneyId" parameterType="map">
+        UPDATE journey
+        SET journey_delete_yn = 'Y'
         WHERE journey_id = #{journeyId}
-    </delete>
+    </update>
 
 
 </mapper>

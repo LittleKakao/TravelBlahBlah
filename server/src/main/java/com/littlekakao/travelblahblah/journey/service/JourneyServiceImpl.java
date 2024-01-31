@@ -20,26 +20,26 @@ public class JourneyServiceImpl implements JourneyService{
 
     @Override
     public List<Journey> findJourneyAll() {
-        return journeyMapper.selectJourneyAll();
+        return journeyMapper.findJourneyAll();
     }
 
     @Override
     public Journey findJourneyByJourneyId(int journeyId) {
-        return journeyMapper.selectJourneyByJourneyId(journeyId);
+        return journeyMapper.findJourneyByJourneyId(journeyId);
     }
 
     @Override
-    public int addJourney(Journey journey) {
-        return journeyMapper.insertJourney(journey);
+    public void addJourney(Journey journey) {
+        journeyMapper.addJourney(journey);
     }
 
     @Override
-    public int modifyJourneyByJourneyId(Map<String, Object> paramMap) {
-        return journeyMapper.updateJourneyByJourneyId(paramMap);
+    public void modifyJourneyByJourneyId(Map<String, Object> paramMap) {
+        journeyMapper.modifyJourneyByJourneyId(paramMap);
     }
 
     @Override
-    public int removeJourneyByJourneyId(int journeyId) {
-        return journeyMapper.deleteJourneyByJourneyId(journeyId);
+    public void removeJourneyByJourneyId(Map<String, Object> paramMap) {
+        journeyMapper.removeJourneyByJourneyId(paramMap);
     }
 }

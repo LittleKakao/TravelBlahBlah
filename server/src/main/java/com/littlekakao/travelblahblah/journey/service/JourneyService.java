@@ -8,7 +8,7 @@ import java.util.Map;
 public interface JourneyService {
     public List<Journey> findJourneyAll();
     public Journey findJourneyByJourneyId(int journeyId);
-    public int addJourney(Journey journey);
-    public int modifyJourneyByJourneyId(Map<String, Object> paramMap);
-    public int removeJourneyByJourneyId(int journeyId);
+    public void addJourney(Journey journey);
+    public void modifyJourneyByJourneyId(Map<String, Object> paramMap);
+    public void removeJourneyByJourneyId(Map<String, Object> paramMap);
 }

@@ -8,9 +8,9 @@ import java.util.Map;
 
 @Mapper
 public interface JourneyMapper {
-    public List<Journey> selectJourneyAll();
-    public Journey selectJourneyByJourneyId(int journeyId);
-    public int insertJourney(Journey journey);
-    public int updateJourneyByJourneyId(Map<String, Object> paramMap);
-    public int deleteJourneyByJourneyId(int journeyId);
+    public List<Journey> findJourneyAll();
+    public Journey findJourneyByJourneyId(int journeyId);
+    public void addJourney(Journey journey);
+    public void modifyJourneyByJourneyId(Map<String, Object> paramMap);
+    public void removeJourneyByJourneyId(Map<String, Object> paramMap);
 }
