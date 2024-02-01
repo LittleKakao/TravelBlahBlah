@@ -6,14 +6,9 @@ import com.littlekakao.travelblahblah.schedule.service.ScheduleService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.ExampleObject;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import org.apache.commons.lang3.StringUtils;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
@@ -23,21 +18,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value="/schedule")
-public class ScheduleRestController {
+public class ScheduleController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     ScheduleService scheduleService;
 
-    @Operation(description = "특정 여정의 모든 일정을 반환한다." )
+    @Operation(summary = "여정별 일정 조회", description = "journeyId를 사용하여 해당 여정에 속하는 모든 일정을 조회한다.")
     @Parameters({
-        @Parameter(name = "journeyId", description = "조회 대상 journeyId", required = true)
+        @Parameter(name = "journeyId", description = "조회 대상 journeyId", required = true, in = ParameterIn.PATH)
     })
-    @GetMapping("/findAllSchedule/{journeyId}")
-    public ResponseEntity<BodyContent> findAllSchedule(@PathVariable int journeyId) throws Exception {
+    @GetMapping("/all/{journeyId}")
+    public ResponseEntity<BodyContent> findScheduleAll(@PathVariable int journeyId) throws Exception {
         BodyContent bodyContent = new BodyContent();
         try {
-            List<Schedule> scheduleLists = scheduleService.findAllScheduleByJourneyId(journeyId);
+            List<Schedule> scheduleLists = scheduleService.findScheduleAllByJourneyId(journeyId);
             if (scheduleLists.isEmpty()) {
                 bodyContent.setStatus("OK");
                 bodyContent.setMessage("존재하지 않는 여정"); // to do : message property 생성하여 정리
@@ -50,20 +45,20 @@ public class ScheduleRestController {
         } catch (Exception e) {
             bodyContent.setStatus("FAIL");
             bodyContent.setMessage(e.getMessage());
-            logger.error("[Exception: findAllSchedule] ", e);
+            logger.error("[Exception: findScheduleAll] ", e);
             return new ResponseEntity<>(bodyContent, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @Operation(description = "특정 일정을 반환한다." )
+    @Operation(summary = "일정 조회", description = "대상 scheduleId를 사용하여 일정 상세 데이터를 조회한다.")
     @Parameters({
-        @Parameter(name = "scheduleId", description = "조회 대상 scheduleId", required = true)
+        @Parameter(name = "scheduleId", description = "조회 대상 scheduleId", required = true, in = ParameterIn.PATH)
     })
-    @GetMapping(value="/findOneSchedule/{scheduleId}")
-    public ResponseEntity<BodyContent> findOneSchedule(@PathVariable int scheduleId) throws Exception {
+    @GetMapping(value="/{scheduleId}")
+    public ResponseEntity<BodyContent> findScheduleByScheduleId(@PathVariable int scheduleId) throws Exception {
         BodyContent bodyContent = new BodyContent();
         try {
-            Schedule schedule = scheduleService.findOneScheduleById(scheduleId);
+            Schedule schedule = scheduleService.findScheduleByScheduleId(scheduleId);
             if (ObjectUtils.isEmpty(schedule)) {
                 bodyContent.setStatus("OK");
                 bodyContent.setMessage("존재하지 않는 일정"); // to do : message property 생성하여 정리
@@ -76,22 +71,13 @@ public class ScheduleRestController {
         } catch (Exception e){
             bodyContent.setStatus("FAIL");
             bodyContent.setMessage(e.getMessage());
-            logger.error("[Exception: findOneSchedule] ", e);
+            logger.error("[Exception: findScheduleByScheduleId] ", e);
             return new ResponseEntity<>(bodyContent, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @Operation(description = "일정을 추가한다.")
-    @Parameters({
-        @Parameter(name = "journeyId", description = "추가할 schedule의 소속 journeyId", required = true)
-        ,@Parameter(name = "scheduleName", required = false)
-        ,@Parameter(name = "scheduleDestination", required = false)
-        ,@Parameter(name = "scheduleStartDate", required = false)
-        ,@Parameter(name = "scheduleEndDate", required = false)
-        ,@Parameter(name = "categoryName", required = false)
-        ,@Parameter(name = "categoryColor", required = false)
-    })
-    @PostMapping("/addSchedule")
+    @Operation(summary = "일정 추가", description = "RequestBody에 일정 상세 파라미터를 담아 호출하여 신규 일정을 등록한다.")
+    @PostMapping("")
     public ResponseEntity<BodyContent> addSchedule(@RequestBody Schedule schedule) throws Exception {
         BodyContent bodyContent = new BodyContent();
         try {
@@ -108,16 +94,15 @@ public class ScheduleRestController {
         }
     }
 
-    // delete
-    @Operation(description = "특정 일정을 삭제한다." )
+    @Operation(summary = "일정 삭제", description = "scheduleId를 사용하여 해당 일정을 삭제한다.")
     @Parameters({
-        @Parameter(name = "scheduleId", description = "삭제 대상 scheduleId", required = true)
+        @Parameter(name = "scheduleId", description = "삭제 대상 scheduleId", required = true, in = ParameterIn.PATH)
     })
-    @PutMapping("/deleteSchedule/{scheduleId}")
-    public ResponseEntity<BodyContent> deleteSchedule(@PathVariable int scheduleId) throws Exception {
+    @DeleteMapping("/{scheduleId}")
+    public ResponseEntity<BodyContent> removeScheduleByScheduleId(@PathVariable int scheduleId) throws Exception {
         BodyContent bodyContent = new BodyContent();
         try {
-            scheduleService.deleteSchedule(scheduleId);
+            scheduleService.removeScheduleByScheduleId(scheduleId);
             bodyContent.setStatus("OK");
             bodyContent.setMessage("삭제 성공");
             return new ResponseEntity<>(bodyContent, HttpStatus.OK);
@@ -125,22 +110,23 @@ public class ScheduleRestController {
         } catch (Exception e) {
             bodyContent.setStatus("FAIL");
             bodyContent.setMessage(e.getMessage());
-            logger.error("[Exception: deleteSchedule] ", e);
+            logger.error("[Exception: removeScheduleByScheduleId] ", e);
             return new ResponseEntity<>(bodyContent, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    // update
-    @Operation(description = "특정 일정을 수정한다." )
+    @Operation(summary = "일정 수정", description = "scheduleId를 사용하여 해당 일정을 수정한다. 호출 시 RequestBody에는 수정할 파라미터만 전달해도 됨")
     @Parameters({
-        @Parameter(name = "scheduleId", description = "수정 대상 scheduleId", required = true)
+        @Parameter(name = "scheduleId", description = "수정 대상 scheduleId", required = true, in = ParameterIn.PATH),
+            @Parameter(name = "scheduleId", description = "수정 대상 scheduleId", required = true, in = ParameterIn.PATH)
     })
-    @PutMapping("/updateSchedule/{scheduleId}")
-    public ResponseEntity<BodyContent> updateSchedule(@PathVariable int scheduleId, @RequestBody Schedule schedule) throws Exception {
+    @PutMapping("/{scheduleId}")
+    public ResponseEntity<BodyContent> modifyScheduleByScheduleId(@PathVariable int scheduleId, @RequestBody Schedule schedule) throws Exception {
         BodyContent bodyContent = new BodyContent();
         try {
-            logger.error(schedule.toString());
-            scheduleService.updateSchedule(schedule);
+            schedule.setScheduleId(scheduleId);
+
+            scheduleService.modifyScheduleByScheduleId(schedule);
             bodyContent.setStatus("OK");
             bodyContent.setMessage("수정 성공");
             bodyContent.setData(schedule);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.littlekakao.travelblahblah.schedule.mapper.ScheduleMapper">
-    <select id="findAllScheduleByJourneyId" parameterType="int" resultType="Schedule">
+    <select id="findScheduleAllByJourneyId" parameterType="int" resultType="Schedule">
         SELECT
             *
         FROM schedule
@@ -13,7 +13,7 @@
         </where>
     </select>
 
-    <select id="findOneScheduleById" parameterType="string" resultType="Schedule">
+    <select id="findScheduleByScheduleId" parameterType="string" resultType="Schedule">
         SELECT
             *
         FROM schedule
@@ -48,11 +48,8 @@
                 <if test='scheduleMemo != null and scheduleMemo != ""'>
                     schedule_memo,
                 </if>
-                <if test='categoryName != null and categoryName != ""'>
-                    category_name,
-                </if>
-                <if test='categoryColor != null and categoryColor != ""'>
-                    category_color,
+                <if test="categoryId != null and !categoryId.equals('')">
+                    category_id,
                 </if>
             </trim>
         )
@@ -78,23 +75,20 @@
                 <if test='scheduleMemo != null and scheduleMemo != ""'>
                     #{scheduleMemo},
                 </if>
-                <if test='categoryName != null and categoryName != ""'>
-                    #{categoryName},
-                </if>
-                <if test='categoryColor != null and categoryColor != ""'>
-                    #{categoryColor},
+                <if test="categoryId != null and !categoryId.equals('')">
+                    #{categoryId},
                 </if>
             </trim>
         )
     </insert>
 
-    <update id="deleteSchedule" parameterType="Schedule">
+    <update id="removeScheduleByScheduleId" parameterType="Schedule">
         UPDATE schedule
             SET schedule_delete_yn = 'Y'
         WHERE schedule_id = #{scheduleId}
     </update>
 
-    <update id="updateSchedule">
+    <update id="modifyScheduleByScheduleId">
         UPDATE schedule
             <set>
                 <if test='scheduleName != null and scheduleName != ""'>
@@ -112,11 +106,8 @@
                 <if test="scheduleMemo != null and scheduleMemo != ''">
                     schedule_memo = #{scheduleMemo},
                 </if>
-                <if test="categoryName != null and categoryName != ''">
-                    category_name = #{categoryName},
-                </if>
-                <if test="categoryColor != null and categoryColor != ''">
-                    category_color = #{categoryColor},
+                <if test="categoryId != null and !categoryId.equals('')">
+                    category_id = #{categoryId},
                 </if>
                 schedule_update_date = NOW()
             </set>

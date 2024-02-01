@@ -1,17 +1,31 @@
 package com.littlekakao.travelblahblah.schedule.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
+
 public class Schedule {
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int scheduleId;
+    @Schema(description = "소속 여정 아이디", nullable = false, example = "1")
     private int journeyId;
+    @Schema(description = "일정명", nullable = false, example = "쇼츠 촬영", maxLength = 20)
     private String scheduleName;
+    @Schema(description = "일정 장소", nullable = true, example = "보성 녹차밭", maxLength = 20)
     private String scheduleDestination;
+    @Schema(description = "일정 시작 일시", nullable= false, example = "2024-01-01 18:00:00")
     private String scheduleStartDate;
+    @Schema(description = "일정 종료 일시", nullable= false, example = "2024-01-01 19:00:00")
     private String scheduleEndDate;
+    @Schema(description = "일정메모", nullable = true, example = "보성의 푸르른 녹차밭에서 멋진 쇼츠를 찍는다.", maxLength = 200)
     private String scheduleMemo;
-    private String categoryName;
-    private String categoryColor;
+    @Schema(description = "카테고리 아이디", nullable = false, example = "122")
+    private int categoryId;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String scheduleCreateDate;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String scheduleUpdateDate;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @Schema(description = "일정 삭제 여부", example = "N")
     private String scheduleDeleteYn;
 
     public int getScheduleId() {
@@ -70,22 +84,13 @@ public class Schedule {
         this.scheduleMemo = scheduleMemo;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
-
-    public String getCategoryColor() {
-        return categoryColor;
-    }
-
-    public void setCategoryColor(String categoryColor) {
-        this.categoryColor = categoryColor;
-    }
-
     public String getScheduleCreateDate() {
         return scheduleCreateDate;
     }

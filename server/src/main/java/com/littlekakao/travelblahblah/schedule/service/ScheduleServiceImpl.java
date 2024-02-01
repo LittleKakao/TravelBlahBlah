@@ -13,13 +13,13 @@ public class ScheduleServiceImpl implements ScheduleService{
     ScheduleMapper scheduleMapper;
 
     @Override
-    public List<Schedule> findAllScheduleByJourneyId(int journeyId) throws Exception {
-        return scheduleMapper.findAllScheduleByJourneyId(journeyId);
+    public List<Schedule> findScheduleAllByJourneyId(int journeyId) throws Exception {
+        return scheduleMapper.findScheduleAllByJourneyId(journeyId);
     }
 
     @Override
-    public Schedule findOneScheduleById(int scheduleId) throws Exception {
-        return scheduleMapper.findOneScheduleById(scheduleId);
+    public Schedule findScheduleByScheduleId(int scheduleId) throws Exception {
+        return scheduleMapper.findScheduleByScheduleId(scheduleId);
     }
 
     @Override
@@ -31,18 +31,18 @@ public class ScheduleServiceImpl implements ScheduleService{
     }
 
     @Override
-    public void deleteSchedule(int scheduleId) throws Exception {
-        int result = scheduleMapper.deleteSchedule(scheduleId);
+    public void removeScheduleByScheduleId(int scheduleId) throws Exception {
+        int result = scheduleMapper.removeScheduleByScheduleId(scheduleId);
         if (result != 1) {
-            throw new Exception ("Error [ScheduleService.deleteSchedule] delete Failed scheduleId: " + scheduleId);
+            throw new Exception ("Error [ScheduleService.removeScheduleByScheduleId] delete Failed scheduleId: " + scheduleId);
         }
     }
 
     @Override
-    public void updateSchedule(Schedule schedule) throws Exception {
-        int result = scheduleMapper.updateSchedule(schedule);
+    public void modifyScheduleByScheduleId(Schedule schedule) throws Exception {
+        int result = scheduleMapper.modifyScheduleByScheduleId(schedule);
         if (result != 1) {
-            throw new Exception ("Error [ScheduleService.updateSchedule] update failed ");
+            throw new Exception ("Error [ScheduleService.modifyScheduleByScheduleId] update failed ");
         }
     }
 }

@@ -8,13 +8,13 @@ import java.util.List;
 @Mapper
 public interface ScheduleMapper {
 
-    public List<Schedule> findAllScheduleByJourneyId(int journeyId);
+    public List<Schedule> findScheduleAllByJourneyId(int journeyId);
 
-    public Schedule findOneScheduleById(int scheduleId);
+    public Schedule findScheduleByScheduleId(int scheduleId);
 
     public int addSchedule(Schedule schedule);
 
-    public int deleteSchedule(int scheduleId);
+    public int removeScheduleByScheduleId(int scheduleId);
 
-    public int updateSchedule(Schedule schedule);
+    public int modifyScheduleByScheduleId(Schedule schedule);
 }

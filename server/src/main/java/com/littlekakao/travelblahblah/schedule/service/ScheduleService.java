@@ -5,13 +5,13 @@ import java.util.List;
 
 public interface ScheduleService {
 
-    public List<Schedule> findAllScheduleByJourneyId(int journeyId) throws Exception;
+    public List<Schedule> findScheduleAllByJourneyId(int journeyId) throws Exception;
 
-    public Schedule findOneScheduleById(int scheduleId) throws Exception;
+    public Schedule findScheduleByScheduleId(int scheduleId) throws Exception;
 
     public void addSchedule(Schedule schedule) throws Exception;
 
-    public void updateSchedule(Schedule schedule) throws Exception;
+    public void modifyScheduleByScheduleId(Schedule schedule) throws Exception;
 
-    public void deleteSchedule(int scheduleId) throws Exception;
+    public void removeScheduleByScheduleId(int scheduleId) throws Exception;
 }
