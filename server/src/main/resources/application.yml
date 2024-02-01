@@ -2,7 +2,7 @@ spring:
   # DATABASE
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/travelblahblah
+    url: jdbc:mariadb://localhost:3306/travelblahblah?serverTimezone=Asia/Seoul
     username: root
     password: root
 
