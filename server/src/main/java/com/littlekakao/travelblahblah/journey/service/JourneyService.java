@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface JourneyService {
-    public List<Journey> findJourneyAll();
+    public List<Journey> findJourneyAll(int userId);
     public Journey findJourneyByJourneyId(int journeyId);
     public void addJourney(Journey journey);
     public void modifyJourneyByJourneyId(Map<String, Object> paramMap);

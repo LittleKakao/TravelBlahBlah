@@ -27,11 +27,11 @@ public class JourneyController {
         this.journeyService = journeyService;
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<BodyContent> findJourneyAll() throws Exception {
+    @GetMapping("/all/{userId}")
+    public ResponseEntity<BodyContent> findJourneyAll(@PathVariable int userId) throws Exception {
         BodyContent bodyContent = new BodyContent();
         try {
-            List<Journey> journeys = journeyService.findJourneyAll();
+            List<Journey> journeys = journeyService.findJourneyAll(userId);
             if (journeys.isEmpty()) {
                 bodyContent.setStatus("OK");
                 bodyContent.setMessage("여정 데이터가 존재하지 않습니다.");
