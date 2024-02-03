@@ -19,8 +19,8 @@ public class JourneyServiceImpl implements JourneyService{
 
 
     @Override
-    public List<Journey> findJourneyAll() {
-        return journeyMapper.findJourneyAll();
+    public List<Journey> findJourneyAll(int userId) {
+        return journeyMapper.findJourneyAll(userId);
     }
 
     @Override

@@ -1,11 +1,12 @@
 package com.littlekakao.travelblahblah.journey.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 public class Journey {
 
-    @Schema(description = "여정 pk", example = "0")
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int journeyId;
     @Schema(description = "유저 pk", example = "0")
     private int userId;
@@ -13,15 +14,15 @@ public class Journey {
     private String journeyName;
     @Schema(description = "여정 목적지", example = "미국")
     private String journeyDestination;
-    @Schema(description = "여정 시작 날짜", example = "2024-01-01 00:00:00")
+    @Schema(description = "여정 시작 날짜", example = "2024-01-01")
     private String journeyStartDate;
-    @Schema(description = "여정 종료 날짜", example = "2024-01-01 00:00:00")
+    @Schema(description = "여정 종료 날짜", example = "2024-01-01")
     private String journeyEndDate;
-    @Schema(description = "여정 데이터 생성 시각", example = "2024-01-01 00:00:00")
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String journeyCreateDate;
-    @Schema(description = "여정 데이터 수정 시각", example = "2024-01-01 00:00:00")
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String journeyUpdateDate;
-    @Schema(description = "여정 삭제 여부", example = "N")
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String journeyDeleteYn;
 
     public int getJourneyId() {
