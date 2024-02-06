@@ -12,7 +12,7 @@ import Foundation
 struct GetJourneyResponseDTO: Decodable {
     let status: String
     let message: String
-    let data: JourneyDTO
+    let data: [JourneyDTO]
 }
 
 // MARK: - Create Journey
