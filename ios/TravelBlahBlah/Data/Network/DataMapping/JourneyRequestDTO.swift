@@ -8,7 +8,11 @@
 import Foundation
 
 struct GetJourneyRequestDTO: Encodable {
-    let query: String
+    let userId: Int
+    
+    init(userId: Int) {
+        self.userId = userId
+    }
 }
 
 struct CreateJourneyRequestDTO: Encodable {

@@ -9,6 +9,16 @@ import Foundation
 
 struct APIEndpoints {
     
+    static func getJourney(with getJourneyRequestDTO: GetJourneyRequestDTO) -> Endpoint<GetJourneyResponseDTO> {
+        
+        return Endpoint(
+            path: "journey/all/0",
+            method: .get,
+            queryParametersEncodable: getJourneyRequestDTO,
+            responseDecoder: JSONResponseDecoder()
+        )
+    }
+    
     static func createJourney(with createJourneyRequestDTO: CreateJourneyRequestDTO) -> Endpoint<CreateJourneyResponseDTO> {
         
         return Endpoint(

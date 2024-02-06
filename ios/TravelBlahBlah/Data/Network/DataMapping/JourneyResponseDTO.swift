@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Get Journey List
 
-struct JourneyResponseDTO: Decodable {
+struct GetJourneyResponseDTO: Decodable {
     
 }
 
