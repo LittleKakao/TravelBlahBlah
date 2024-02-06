@@ -14,10 +14,16 @@ struct GetJourneyRequestDTO: Encodable {
 struct CreateJourneyRequestDTO: Encodable {
     let journeyName: String
     let journeyDestination: String
-    var journeyStartDate: Date {
-        return Date()
-    }
-    var journeyEndDate: Date {
-        return Date()
+    var journeyStartDate: String
+    var journeyEndDate: String
+    
+    init(journeyName: String, journeyDestination: String, startDate: Date = Date(), endDate: Date = Date()) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        self.journeyName = journeyName
+        self.journeyDestination = journeyDestination
+        self.journeyStartDate = dateFormatter.string(from: startDate)
+        self.journeyEndDate = dateFormatter.string(from: endDate)
     }
 }

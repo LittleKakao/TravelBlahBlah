@@ -17,15 +17,21 @@ struct JourneyResponseDTO: Decodable {
 // MARK: - Create Journey
 
 struct CreateJourneyResponseDTO: Decodable {
-    let success: Bool
-    let journey: CreateJourneyDTO?
-    let error: CreateJourneyErrorDTO?
+    let status: String
+    let message: String
+    let data: CreateJourneyDTO
 }
 
 struct CreateJourneyDTO: Decodable {
     let journeyId: Int
-    let journeyNm: String
-    let journeyDest: String
+    let userId: Int
+    let journeyName: String
+    let journeyDestination: String
+    let journeyStartDate: String
+    let journeyEndDate: String
+    let journeyCreateDate: String
+    let journeyUpdateDate: String
+    let journeyDeleteYn: String
 }
 
 struct CreateJourneyErrorDTO: Decodable {
