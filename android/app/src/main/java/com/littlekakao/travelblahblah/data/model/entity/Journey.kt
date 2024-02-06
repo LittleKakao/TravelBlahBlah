@@ -1,5 +1,6 @@
-package com.littlekakao.travelblahblah.data.model.db
+package com.littlekakao.travelblahblah.data.model.entity
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import java.util.Date
 
