@@ -1,4 +1,4 @@
-package com.littlekakao.travelblahblah.data.model.db
+package com.littlekakao.travelblahblah.data.model.entity
 
 import kotlinx.serialization.Serializable
 
