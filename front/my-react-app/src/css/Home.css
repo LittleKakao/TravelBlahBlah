@@ -1,0 +1,37 @@
+.travel-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.travel-table th, .travel-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.travel-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.travel-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.travel-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.create-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-button:hover {
+    background-color: #0056b3;
+}
